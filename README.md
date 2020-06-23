@@ -8,7 +8,7 @@
   Gatsby's personal blog starter
 </h1>
 
-<img alt="screesnhot" src="./screenshot.png">
+<img alt="hex" src="./darkHex-backer.svg">
 
 This starter is a fork of Gatsby Starter Blog, the most popular starter by far – with second place being Gatsby Starter Netlify CMS. So I decided to combine the 2!
 
@@ -57,3 +57,7 @@ Start from [this point](https://www.gatsbyjs.org/docs/sourcing-from-netlify-cms/
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thomaswangio/gatsby-personal-starter-blog)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+https://github.com/thomaswang/gatsby-personal-starter-blog
+
+https://www.youtube.com/watch?time_continue=2&v=JeTqxCJC56Q&feature=emb_logo
