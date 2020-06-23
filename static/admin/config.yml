@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: mpmcauliffe/heximal
+  repo: thomaswang/gatsby-personal-starter-blog
 
 media_folder: content/assets
 public_folder: ../assets
