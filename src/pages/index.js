@@ -1,39 +1,82 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect, useContext, } from 'react'
+import { Link } from 'gatsby'
+import StylesProvider from '../context/StylesProvider'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
+import { HexLink, Layout, Post, } from '../components'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Button from "../components/button"
 
-class IndexPage extends React.Component {
-  render() {
-    const siteTitle = "Gatsby Starter Personal Website"
+const IndexWrapper = styled.main`
+    margin: 5rem auto;
+`
 
+export default ({ data }) => {
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="Home"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <img style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
-        <h1>
-          Hey people{" "}
-          <span role="img" aria-label="wave emoji">
-            👋
-          </span>
-        </h1>
-        <p>Welcome to your new Gatsby website. You are on your home page.</p>
-        <p>
-          This starter comes out of the box with styled components and Gatsby's
-          default starter blog running on Netlify CMS.
-        </p>
-        <p>Now go build something great!</p>
-        <Link to="/blog/">
-          <Button marginTop="35px">Go to Blog</Button>
-        </Link>
-      </Layout>
+        <StylesProvider>
+            <Layout>
+                <IndexWrapper>
+                    {/* <Dump data={data}></Dump> */}
+                    {data.allMdx.nodes.map(
+                        ({ id, excerpt, frontmatter, fields }) => (
+                            <Post 
+                                key={id}
+                                linkTo={fields.slug}
+                                frontmatter={frontmatter} />
+                        )
+                    )}
+                </IndexWrapper>
+            </Layout>
+        </StylesProvider>
     )
-  }
 }
 
-export default IndexPage
+
+export const query = graphql`
+    query SITE_INDEX_QUERY {
+        allMdx(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { published: { eq: true } } }
+        ) {
+            nodes {
+                id
+                excerpt(pruneLength: 250)
+                frontmatter {
+                    title
+                    date(formatString: "MMMM Do, YYYY")
+                    caption
+                    cover {
+                        publicURL
+                        childImageSharp {
+                            sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
+                                ...GatsbyImageSharpSizes_tracedSVG
+                            }
+                        }
+                    }
+                }
+                fields {
+                    slug
+                }
+            }
+        }
+    }
+`
+
+// date(formatString: "MMMM Do, YYYY")
+
+
+
+// <HexLink to={fields.slug} key={id}>
+//     <PostWrapper >
+//         <div>
+//             <h3>{frontmatter.title}</h3>
+//             <p>{frontmatter.date}</p>
+//             <p>{frontmatter.caption}</p>
+//         </div>
+//         <div>
+//             {!!frontmatter.cover 
+//                 ? (<Image sizes={frontmatter.cover.childImageSharp.sizes} />) 
+//                 : null}
+//         </div>
+//     </PostWrapper>
+    
+// </HexLink>
