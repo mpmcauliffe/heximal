@@ -7,7 +7,7 @@ import { Navbar, NavTitle, } from './header.comp'
 export const Header = ({ siteTitle, siteDescription }) => (
     <Navbar>
         <HexLink to="/">
-            <NavTitle>{siteTitle}</NavTitle>
+            <h1>{siteTitle}</h1>
             {/**<p>{siteDescription}</p> */}
             
         </HexLink>

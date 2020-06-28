@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         font-family: sans-serif;
         overflow-x: hidden;
-        height: 100vh;
+        background-color: #171E1A;
     }
     h1 {
         font-family: 'Martel', serif;

@@ -7,7 +7,11 @@ import { HexLink, Layout, Post, } from '../components'
 
 
 const IndexWrapper = styled.main`
-    margin: 5rem auto;
+    margin: 0 auto;
+
+    @media (min-width: 769px) {
+        margin: 10rem auto;
+    }
 `
 
 export default ({ data }) => {

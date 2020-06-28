@@ -9,12 +9,16 @@ export const Layout = props => {
     const { title, description } = useSiteMetadata()
     const stylesContext = useContext(StylesContext)
 
-    const { MainContainer, } = stylesContext
+    const { MainContainer, Parallax, } = stylesContext
 
 
     return (
         <Fragment>
             <Header siteTitle={title} siteDescription={description} />
+            {/**<Parallax
+                alt='parallax'
+                src={require('../../context/darkHex-backer.svg')} /> */}
+            
             <MainContainer article={props.article}>    
                 {props.children}
             </MainContainer>    

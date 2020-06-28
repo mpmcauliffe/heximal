@@ -17,7 +17,7 @@ export const Post = ({ frontmatter, linkTo }) => {
                         <h3>{frontmatter.title}</h3>
                         <p>{frontmatter.date}</p>
                     </div>
-                    <p>{truncate(frontmatter.caption, 70)}</p>
+                    <p>{truncate(frontmatter.caption)}</p>
                 </div>
                 <div>
                     {!!frontmatter.cover 
