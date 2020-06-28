@@ -34,9 +34,6 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: { path: `${__dirname}/posts`, name: `posts` },
         }, {
-            resolve: `gatsby-source-filesystem`,
-            options: { path: `${__dirname}/posts/assets`, name: `assets` },
-        }, {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {
                 fonts: [
