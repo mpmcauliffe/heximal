@@ -7,7 +7,7 @@ import { darkTheme } from './darkTheme'
 import { Link as GatsbyLink } from 'gatsby'
 import Img from 'gatsby-image'
 
-// ${p => p.article ? '90%' : '100vw'}
+
 // CONTAINERS
 const MainContainer = styled.main`
     width: ${p => p.article ? '90vw' : '100vw'}; 
@@ -18,10 +18,10 @@ const MainContainer = styled.main`
         width: 90%;
     }
     @media (min-width: 1025px) {
-        width: 80%;
+        width: 60%;
     }
     @media (min-width: 1601px) {
-        width: 70%;
+        width: 50%;
     }
 `
 const PostWrapper = styled.div`
@@ -32,7 +32,7 @@ const PostWrapper = styled.div`
     height: 15rem;
     /* width: 100vw; */
     /* margin: 2rem 0; */
-    border: .1rem solid ${p => p.theme.sky};
+    border-top: .1rem solid ${p => p.theme.sky};
     padding: 2rem;
     background-color: ${p => p.theme.darkPrime};
 
@@ -51,16 +51,14 @@ const PostWrapper = styled.div`
 
     @media (min-width: 769px) {
         margin: 2rem 0;
+        border: .1rem solid ${p => p.theme.sky};
+        border-radius: .5rem;
     }
     @media (min-width: 1025px) {
         height: 20rem;
         margin: 5rem 0;
 
-        div > h3 { 
-            margin-bottom: .5rem;
-            font-size: 4rem; 
-        }
-        div > p { font-size: 2.1rem; }
+        div > h3 { margin-bottom: .5rem; }
     }
     @media (min-width: 1025px) {
         height: 25rem;
@@ -69,22 +67,23 @@ const PostWrapper = styled.div`
     @media (min-width: 1601px) {
         height: 30rem;
         margin: 7rem 0;
-
-        div > h3 { font-size: 5rem; }
-        div > p { font-size: 2.6rem; }
     }
 `
 
 // TEXT
 const ArticleTitle = styled.h2`
     font-size: 7rem;
+    color: ${p => p.theme.sky};
     margin: 12rem 0 0 0;
 `
 const ArticleDate = styled.p`
     margin: -1rem 0 3rem 0;
+    color: ${p => p.theme.sky};
+    font-style: italic;
 `
 const Caption = styled.p`
     /* font-size: 1.8rem; */
+    color: ${p => p.theme.sky};
     line-height: 100%;
     /* margin: 3rem 0; */
     margin-bottom: 4rem;
@@ -115,19 +114,19 @@ const HexLink = props => {
 // IMAGES
 const Thumbnail = styled(Img)`
     border-radius: .5rem;
-    width: 13rem;
+    width: 15rem;
 
     @media (min-width: 481px) {
-        width: 16rem;
+        width: 18rem;
     }
     @media (min-width: 769px) {
-        width: 19rem;
+        width: 22rem;
     }
     @media (min-width: 1025px) {
-        width: 24rem;
+        width: 33rem;
     }
     @media (min-width: 1601px) {
-        width: 29rem;
+        width: 37rem;
     }
 `
 const Parallax = styled.img`

@@ -66,21 +66,3 @@ export const query = graphql`
 `
 
 // date(formatString: "MMMM Do, YYYY")
-
-
-
-// <HexLink to={fields.slug} key={id}>
-//     <PostWrapper >
-//         <div>
-//             <h3>{frontmatter.title}</h3>
-//             <p>{frontmatter.date}</p>
-//             <p>{frontmatter.caption}</p>
-//         </div>
-//         <div>
-//             {!!frontmatter.cover 
-//                 ? (<Image sizes={frontmatter.cover.childImageSharp.sizes} />) 
-//                 : null}
-//         </div>
-//     </PostWrapper>
-    
-// </HexLink>

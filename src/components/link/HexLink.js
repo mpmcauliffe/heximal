@@ -12,14 +12,9 @@ const Link = ({ children, ...props }) => {
 }
 
 const StyledLink = styled(Link)`
-    /* width: 100%; */
     text-decoration: none;
     color: white;
     cursor: pointer;
-
-    &:hover {
-        
-    }
 `
 
 

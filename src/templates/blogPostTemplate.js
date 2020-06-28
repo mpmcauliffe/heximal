@@ -2,7 +2,7 @@ import React, { Fragment, } from 'react'
 import StylesProvider from '../context/StylesProvider'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Dump, Layout, Titlebar, } from '../components'
+import { Dump, Layout, Content, HexLink, SpreadContainer, } from '../components'
 
 
 export default ({ data, pageContext }) => {
@@ -16,30 +16,32 @@ export default ({ data, pageContext }) => {
                 {/**<Dump previous={previous} />
                 <Dump next={next} /> */}
                 
-                <Titlebar 
+                <Content 
                     title={frontmatter.title}
                     date={frontmatter.date}
                     caption={frontmatter.caption}
                     body={body} />
                 
-                {previous === false ? null : (
-                    <Fragment>
-                        {previous && (
-                            <Link to={previous.fields.slug}>
-                            <p>{previous.frontmatter.title}</p>
-                            </Link>
-                        )}
-                    </Fragment>
-                )}
-                {next === false ? null : (
-                    <Fragment>
-                        {next && (
-                            <Link to={next.fields.slug}>
-                            <p>{next.frontmatter.title}</p>
-                            </Link>
-                        )}
-                    </Fragment>
-                )}
+                <SpreadContainer>
+                    {previous === false ? null : (
+                        <Fragment>
+                            {previous && (
+                                <HexLink to={previous.fields.slug}>
+                                    <p>&#8592;&nbsp;{previous.frontmatter.title}</p>
+                                </HexLink>
+                            )}
+                        </Fragment>
+                    )}
+                    {next === false ? null : (
+                        <Fragment>
+                            {next && (
+                                <HexLink to={next.fields.slug}>
+                                    <p>{next.frontmatter.title}&nbsp;&#8594;</p>
+                                </HexLink>
+                            )}
+                        </Fragment>
+                    )}
+                </SpreadContainer>
             </Layout>
         </StylesProvider>
     )

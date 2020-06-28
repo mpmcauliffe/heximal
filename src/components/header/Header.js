@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { HexLink } from '../../components'
-import { Navbar, NavTitle, } from './header.comp'
+import { Navbar, } from './header.comp'
 
 
 export const Header = ({ siteTitle, siteDescription }) => (

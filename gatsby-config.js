@@ -17,7 +17,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 360,
+                            maxWidth: 1280,
                         },
                     },
                 ],
@@ -25,7 +25,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 360,
+                            maxWidth: 1280,
                         },
                     },
                 ],
@@ -33,6 +33,9 @@ module.exports = {
         }, {
             resolve: `gatsby-source-filesystem`,
             options: { path: `${__dirname}/posts`, name: `posts` },
+        }, {
+            resolve: `gatsby-source-filesystem`,
+            options: { path: `${__dirname}/posts/assets`, name: `assets` },
         }, {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {

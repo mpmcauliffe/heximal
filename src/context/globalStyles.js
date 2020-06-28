@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: sans-serif;
         overflow-x: hidden;
         background-color: #171E1A;
+        color: #e1e8f5;
     }
     h1 {
         font-family: 'Martel', serif;
@@ -43,5 +44,24 @@ export const GlobalStyles = createGlobalStyle`
     p {
         font-size: 1.7rem;
         font-weight: 400;
+    }
+    pre {
+        font-size: 1.7rem;
+    }
+
+    @media (min-width: 1025px) {
+        h3 { 
+            margin-bottom: .5rem;
+            font-size: 4rem; 
+        }
+        h4 { font-size: 3.3rem; }
+        p { font-size: 2.3rem; }
+        pre { font-size: 2rem; }
+    }
+    @media (min-width: 1601px) {
+        h3 { font-size: 5rem; }
+        h4 { font-size: 4rem; }
+        p { font-size: 2.6rem; }
+        pre { font-size: 2.3rem; }
     }
 `

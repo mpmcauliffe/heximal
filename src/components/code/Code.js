@@ -4,19 +4,32 @@ import React from 'react'
 import styled from 'styled-components'
 import { copyToClipboard } from '../../utils/copy-to-clipboard'
 
+
 export const Pre = styled.pre`
     text-align: left;
     margin: 1rem 0;
     padding: 0.5rem;
     overflow-x: auto;
     border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
 
+    > div {
+        margin-bottom: 2rem;
+
+        span:first-of-type { margin-right: 1rem; }
+    }
     & .token-line {
         line-height: 1.3rem;
         height: 1.3rem;
     }
-    font-family: 'Courier New', Courier, monospace;
-    position: relative;
+
+    @media (min-width: 1025px) {
+        > div { margin-bottom: 2.3rem; }
+    }
+    @media (min-width: 1601px) {
+        > div { margin-bottom: 2.6rem; }
+    }
 `
 
 export const LineNo = styled.span`
@@ -33,9 +46,8 @@ const CopyCode = styled.button`
     border-radius: 3px;
     margin: 0.25em;
     opacity: 0.3;
-    &:hover {
-        opacity: 1;
-    }
+
+    &:hover { opacity: 1; }
 `
 
 

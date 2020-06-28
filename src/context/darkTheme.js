@@ -11,5 +11,5 @@ export const darkTheme = {
     // lights
     whitePrime: '#D8CCD8',  // languid lavender
     whiteSec: '#CBD7D0',    // ash gray
-    sky: '#CAD1DF',         // light periwinkle
+    sky: '#e1e8f5',         // light periwinkle
 }

@@ -3,7 +3,7 @@ import StylesContext from '../../context/stylesContext'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 
-export const Titlebar = ({ title, date, caption, body, }) => {
+export const Content = ({ title, date, caption, body, }) => {
     const stylesContext = useContext(StylesContext)
 
     const { ArticleTitle, ArticleDate, Caption, } = stylesContext
