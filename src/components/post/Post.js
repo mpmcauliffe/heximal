@@ -1,4 +1,4 @@
-import React, { useContext, } from 'react'
+import React, { useState, useEffect, useContext, } from 'react'
 import styled from 'styled-components'
 import StylesContext from '../../context/stylesContext'
 import Img from 'gatsby-image'
@@ -9,6 +9,19 @@ export const Post = ({ frontmatter, linkTo }) => {
     const stylesContext = useContext(StylesContext)
     const { HexLink, PostWrapper, Thumbnail } = stylesContext
 
+    const [cap, setCap] = useState('')
+
+    useEffect(() => {
+        /** IMPORTANT FOR DEPLOYMENT
+         *  window is `undefined` on serverside rendering
+         *  this function prevents the truncate helper from firing 
+         *  until this component mounts
+         */
+        setCap(truncate(frontmatter.caption))
+
+    }, [])
+
+
     return (
         <HexLink to={linkTo}>
             <PostWrapper>
@@ -17,7 +30,7 @@ export const Post = ({ frontmatter, linkTo }) => {
                         <h3>{frontmatter.title}</h3>
                         <p>{frontmatter.date}</p>
                     </div>
-                    <p>{truncate(frontmatter.caption)}</p>
+                    <p>{cap}</p>
                 </div>
                 <div>
                     {!!frontmatter.cover 
