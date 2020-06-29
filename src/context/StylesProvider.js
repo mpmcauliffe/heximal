@@ -19,13 +19,13 @@ const OuterContainer = styled.div`
 
 const MainContainer = styled.main`
     width: ${p => p.article ? '90vw' : '100vw'}; 
-    margin: 8.2rem auto 0 auto;
+    margin: ${p => p.article ? '20rem auto 0 auto' : '8.2rem auto 0 auto'};
 
     h6 {
         text-align: center;
     }
     h1, h2, h3, h4, h5, h6, p, li {
-        color: ${p => p.theme.mainContent}
+        color: ${p => p.theme.mainContent};
         transition: 1s;
     }
 
