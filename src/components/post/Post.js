@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext, } from 'react'
-import styled from 'styled-components'
 import StylesContext from '../../context/stylesContext'
-import Img from 'gatsby-image'
 import { truncate } from '../../helpers/truncate'
 
 

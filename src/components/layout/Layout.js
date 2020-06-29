@@ -1,5 +1,4 @@
 import React, { Fragment, useContext } from 'react'
-import styled from 'styled-components'
 import StylesContext from '../../context/stylesContext'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { Header } from '../../components'
