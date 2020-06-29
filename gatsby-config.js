@@ -1,6 +1,7 @@
 const siteMetadata = {
     title: `hexAscent`,
     description: `This is my coding blog where I write about my coding journey.`,
+    icon: './hex-short-indigo.png',
 }
   
 module.exports = {
@@ -33,6 +34,11 @@ module.exports = {
         }, {
             resolve: `gatsby-source-filesystem`,
             options: { path: `${__dirname}/posts`, name: `posts` },
+        }, {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                icon: `./hex-short-indigo.png`,
+            },
         }, {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {

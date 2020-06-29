@@ -12,9 +12,10 @@ export const Navbar = styled.nav`
 
     justify-content: center;
     /* padding-top: 9rem; */
-    background: ${p => p.theme.primary};
-
-    transition: .6s;
+    /* background: ${p => p.theme.primary}; */
+    background: linear-gradient(to right, ${p => p.theme.primary}, ${p => p.theme.secondaryBackground});
+    border-bottom: .2rem solid ${p => p.theme.primary};
+    transition: 1s;
 
     /* @media (min-width: 1025px) { height: 11rem; }
     @media (min-width: 1601px) { height: 16rem; } */
@@ -26,7 +27,6 @@ export const NavGroup = styled.div`
 
     justify-content: space-between;
     align-items: center;
-
     padding: 1rem;
 
     a > h1 {
@@ -34,7 +34,8 @@ export const NavGroup = styled.div`
         line-height: 100%;
         top: 0;
         margin: 3rem 0;
-        color: ${p => p.theme.whiteSec};
+        color: ${p => p.theme.mainHeader};
+        transition: 1s;
     }
 
     @media (min-width: 481px) {
@@ -53,23 +54,16 @@ export const NavGroup = styled.div`
     }
 `
 
-export const Toggle = styled.div`
-    height: 4.5rem;
-    width: 4.5rem;
-    margin-right: .6rem;
-    background-color: ${p => p.theme.whiteSec};
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    border-radius: 2rem;
-    transition: 700ms;
+export const Toggle = styled.img`
+    height: 4rem;
+    width: 4rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
 
-    /* &:hover {
-        cursor: pointer;
-        background: ${props => props.theme.secondary};
-        background: #E09F3E;
-        transform: rotate(180deg);
-        clip-path: polygon(87% 0, 87% 61%, 100% 61%, 50% 100%, 0 61%, 13% 61%, 13% 0);
-        transform: rotate(180deg);
-    } */
+    @media (min-width: 481px) {
+        height: 5rem;
+        width: 5rem;
+    }
 `
 
 export const NavTitle = styled.h1`
@@ -77,6 +71,6 @@ export const NavTitle = styled.h1`
     line-height: 100%;
     top: 0;
     margin: 3rem 0;
-    color: ${p => p.theme.whiteSec}
+    color: ${p => p.theme.mainHeader}
 `
 

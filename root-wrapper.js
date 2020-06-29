@@ -1,6 +1,7 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import Highlight, { defaultProps, } from 'prism-react-renderer'
+import StylesProvider from './src/context/StylesProvider'
 import Code from './src/components/code/Code'
 import theme from 'prism-react-renderer/themes/nightOwl'
 
@@ -20,5 +21,7 @@ const components = {
   
 
 export const wrapRootElement = ({ element }) => (
-    <MDXProvider components={components}>{element}</MDXProvider>
+    <StylesProvider>
+        <MDXProvider components={components}>{element}</MDXProvider>
+    </StylesProvider>
 )

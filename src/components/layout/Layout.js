@@ -9,7 +9,7 @@ export const Layout = props => {
     const { title, description } = useSiteMetadata()
     const stylesContext = useContext(StylesContext)
 
-    const { MainContainer, Parallax, } = stylesContext
+    const { MainContainer, OuterContainer } = stylesContext
 
 
     return (
@@ -19,9 +19,11 @@ export const Layout = props => {
                 alt='parallax'
                 src={require('../../context/darkHex-backer.svg')} /> */}
             
-            <MainContainer article={props.article}>    
-                {props.children}
-            </MainContainer>    
+            <OuterContainer>
+                <MainContainer article={props.article}>    
+                    {props.children}
+                </MainContainer>  
+            </OuterContainer>
         </Fragment>  
     )
 }

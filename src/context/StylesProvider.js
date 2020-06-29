@@ -1,30 +1,45 @@
-import React from 'react'
+import React, { useState, } from 'react'
 import styled from 'styled-components'
 import { ThemeProvider, } from 'styled-components'
 import stylesContext from './stylesContext'
 import { GlobalStyles } from './globalStyles'
-import { darkTheme } from './darkTheme'
+import { darkTheme, lightTheme } from './theme'
 import { Link as GatsbyLink } from 'gatsby'
 import Img from 'gatsby-image'
 
 
 // CONTAINERS
+const OuterContainer = styled.div`
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    background-color: ${p => p.theme.secondaryBackground};
+    transition: 1s;
+`
+
 const MainContainer = styled.main`
     width: ${p => p.article ? '90vw' : '100vw'}; 
-    margin: 8.2rem auto;
-    /* opacity: .3; */
+    margin: 8.2rem auto 0 auto;
+
+    h6 {
+        text-align: center;
+    }
+    h1, h2, h3, h4, h5, h6, p, li {
+        color: ${p => p.theme.mainContent}
+        transition: 1s;
+    }
 
     @media (min-width: 769px) {
         width: 90%;
-        margin: 15rem auto;
+        margin: 15rem auto 0 auto;
     }
     @media (min-width: 1025px) {
         width: 60%;
-        margin: 20rem auto;
+        margin: 20rem auto 0 auto;
     }
     @media (min-width: 1601px) {
         width: 50%;
-        margin: 25rem auto;
+        margin: 25rem auto 0 auto;
     }
 `
 const PostWrapper = styled.div`
@@ -33,9 +48,9 @@ const PostWrapper = styled.div`
     align-items: center;
     height: 15rem;
     margin-bottom: .2rem;
-    /* border-top: .1rem solid ${p => p.theme.sky}; */
     padding: 2rem;
-    background-color: ${p => p.theme.darkPrime};
+    background-color: ${p => p.theme.primaryBackground};
+    transition: 1s;
 
     >div {
         display: flex;
@@ -52,7 +67,6 @@ const PostWrapper = styled.div`
 
     @media (min-width: 769px) {
         margin: 2rem 0;
-        /* border: .1rem solid ${p => p.theme.sky}; */
         border-radius: .5rem;
     }
     @media (min-width: 1025px) {
@@ -74,19 +88,14 @@ const PostWrapper = styled.div`
 // TEXT
 const ArticleTitle = styled.h2`
     font-size: 7rem;
-    color: ${p => p.theme.sky};
     margin: 12rem 0 0 0;
 `
 const ArticleDate = styled.p`
     margin: -1rem 0 3rem 0;
-    color: ${p => p.theme.sky};
     font-style: italic;
 `
 const Caption = styled.p`
-    /* font-size: 1.8rem; */
-    color: ${p => p.theme.sky};
     line-height: 100%;
-    /* margin: 3rem 0; */
     margin-bottom: 4rem;
 `
 
@@ -99,9 +108,8 @@ const Link = ({ children, ...props }) => {
     )
 }
 const StyledLink = styled(Link)`
-    /* width: 100%; */
     text-decoration: none;
-    color: ${p => p.theme.sky};
+    color: ${p => p.theme.mainContent};
     cursor: pointer;
 `
 const HexLink = props => {
@@ -139,15 +147,18 @@ const Parallax = styled.img`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* z-index: -10; */
 `
 
 // PROVIDER COMPONENT
 const StylesProvider = props => {
+    const [isDarkTheme, setIsDarkTheme] = useState(true)
+
+    const handleThemeChange = () => setIsDarkTheme(!isDarkTheme)
 
     return (
         <stylesContext.Provider
             value={{
+                OuterContainer,
                 MainContainer,
                 PostWrapper,
 
@@ -159,8 +170,14 @@ const StylesProvider = props => {
 
                 Thumbnail,
                 Parallax,
+
+                isDarkTheme,
+                handleThemeChange,
             }}>
-            <ThemeProvider theme={darkTheme}>
+            <ThemeProvider 
+                theme={isDarkTheme 
+                    ? darkTheme
+                    : lightTheme }>
                 <GlobalStyles />
                 {props.children}
             </ThemeProvider>

@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, } from 'react'
 import { Link } from 'gatsby'
-import StylesProvider from '../context/StylesProvider'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { HexLink, Layout, Post, } from '../components'
@@ -16,21 +15,20 @@ const IndexWrapper = styled.main`
 
 export default ({ data }) => {
     return (
-        <StylesProvider>
-            <Layout>
-                <IndexWrapper>
-                    {/* <Dump data={data}></Dump> */}
-                    {data.allMdx.nodes.map(
-                        ({ id, excerpt, frontmatter, fields }) => (
-                            <Post 
-                                key={id}
-                                linkTo={fields.slug}
-                                frontmatter={frontmatter} />
-                        )
-                    )}
-                </IndexWrapper>
-            </Layout>
-        </StylesProvider>
+        <Layout>
+            <IndexWrapper>
+                {/* <Dump data={data}></Dump> */}
+                {data.allMdx.nodes.map(
+                    ({ id, excerpt, frontmatter, fields }) => (
+                        <Post 
+                            key={id}
+                            linkTo={fields.slug}
+                            frontmatter={frontmatter} />
+                    )
+                )}
+            </IndexWrapper>
+            <h6>&copy; Michael P McAuliffe 2020</h6>
+        </Layout>
     )
 }
 

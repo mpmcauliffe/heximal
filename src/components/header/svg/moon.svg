@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 360 360" style="enable-background:new 0 0 360 360;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:none;stroke:#FF5500;stroke-width:15.0362;stroke-linecap:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#EDFF00;stroke-width:16.2455;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g id="sun" class="st0">
+	<g id="XMLID_1_" class="st1">
+		<g>
+		</g>
+		<g>
+			<polyline class="st2" points="134.6,76.7 133.5,35.9 156.8,70 			"/>
+			<polyline class="st2" points="85,120 60.9,88.7 98.4,102.1 			"/>
+			<polyline class="st2" points="70.5,185.1 33.1,174.1 70.6,163 			"/>
+			<polyline class="st2" points="98,246.2 98,246.2 60.9,259.4 84.7,228.4 			"/>
+			<polyline class="st2" points="156.4,278.7 156.4,278.7 133.5,312.2 134.6,272.1 134.6,272.1 			"/>
+			<polyline class="st2" points="222.1,270.1 223.2,312.2 199.8,277.9 			"/>
+			<polyline class="st2" points="269.4,225.1 295.8,259.4 255.4,245 255.4,245 			"/>
+			<polyline class="st2" points="281.6,161.7 323.6,174.1 281.7,186.4 281.7,186.4 			"/>
+			<polyline class="st2" points="255,103.2 295.8,88.7 269.2,123.3 			"/>
+			<polyline class="st2" points="199.4,70.8 223.2,35.9 222.1,78.6 			"/>
+			<path class="st2" d="M156.8,70c6.3-1.2,12.8-1.8,19.4-1.8c8,0,15.7,0.9,23.2,2.6"/>
+			<path class="st2" d="M98.4,102.1c10.1-10.8,22.4-19.5,36.2-25.4"/>
+			<path class="st2" d="M70.6,163c1.7-15.6,6.7-30.2,14.4-43"/>
+			<path class="st2" d="M84.7,228.4c-7.7-12.9-12.6-27.6-14.2-43.3"/>
+			<path class="st2" d="M134.6,272.1c-14-6-26.4-14.8-36.6-25.9"/>
+			<path class="st2" d="M199.8,277.9c-7.6,1.7-15.5,2.6-23.6,2.6c-6.8,0-13.4-0.6-19.8-1.8"/>
+			<path class="st2" d="M255.4,245c-9.3,10.4-20.6,19-33.3,25.1"/>
+			<path class="st2" d="M281.7,186.4c-1.6,13.9-5.8,27-12.2,38.7v0"/>
+			<path class="st2" d="M269.2,123.3c6.4,11.6,10.7,24.6,12.3,38.4"/>
+			<path class="st2" d="M222.1,78.6c12.5,6,23.7,14.4,32.9,24.6"/>
+		</g>
+	</g>
+</g>
+<g id="moon">
+	<g id="XMLID_2_">
+		<g>
+		</g>
+		<g>
+			<path class="st3" d="M213.2,31.6c60.2,19.4,103.8,76,103.8,142.7c0,82.8-67.1,149.9-149.9,149.9c-57.5,0-107.4-32.3-132.5-79.8"
+				/>
+			<path class="st3" d="M213.2,31.6c11.1,20.9,17.4,44.8,17.4,70.1c0,82.8-67.1,149.9-149.9,149.9c-16.1,0-31.6-2.5-46.1-7.2"/>
+		</g>
+	</g>
+</g>
+</svg>

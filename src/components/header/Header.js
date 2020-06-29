@@ -1,10 +1,13 @@
-import React, { useState, useEffect, } from 'react'
+import React, { useState, useContext, } from 'react'
+import StylesProvider from '../../context/stylesContext'
 import { Link } from 'gatsby'
 import { HexLink } from '../../components'
 import { Navbar, NavGroup, Toggle, } from './header.comp'
 
 
-export const Header = ({ siteTitle, siteDescription }) => {
+export const Header = ({ siteTitle, }) => {
+    const stylesProvider = useContext(StylesProvider)
+    const { isDarkTheme, handleThemeChange, } = stylesProvider
 
 
     return (
@@ -15,7 +18,12 @@ export const Header = ({ siteTitle, siteDescription }) => {
                     {/**<p>{siteDescription}</p> */}
                 </HexLink>
 
-                <Toggle />
+                <Toggle
+                    alt='theme-sun-moon' 
+                    src={isDarkTheme
+                        ? require(`./svg/moon.svg`)
+                        : require(`./svg/sun.svg`)}
+                    onClick={handleThemeChange} />
             </NavGroup>
         </Navbar>
     )
