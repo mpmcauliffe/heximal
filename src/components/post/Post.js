@@ -25,7 +25,7 @@ export const Post = ({ frontmatter, linkTo }) => {
     return (
         <HexLink to={linkTo}>
             <PostWrapper>
-                <div>
+                <div  style={{ marginRight: '2rem', }}>
                     <div>
                         <h3>{frontmatter.title}</h3>
                         <p>{frontmatter.date}</p>

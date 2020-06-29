@@ -14,8 +14,8 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         font-family: sans-serif;
         overflow-x: hidden;
-        background-color: #171E1A;
-        color: #e1e8f5;
+        background-color: #131721;
+        color: #f2f7ff;
     }
     h1 {
         font-family: 'Martel', serif;
@@ -36,10 +36,16 @@ export const GlobalStyles = createGlobalStyle`
     h4, h5, h6, li, p {
         font-family: 'Catamaran', sans-serif;
     }
-    
     h4 {
         font-size: 2rem;
         font-weight: 400;
+    }
+    h5 {
+        font-size: 1.3rem;
+    }
+    h6 {
+        font-size: 1rem;
+        font-weight: 100;
     }
     p {
         font-size: 1.7rem;
@@ -55,12 +61,16 @@ export const GlobalStyles = createGlobalStyle`
             font-size: 4rem; 
         }
         h4 { font-size: 3.3rem; }
+        h5 { font-size: 1.6rem; }
+        h6 { font-size: 1.3rem; }
         p { font-size: 2.3rem; }
         pre { font-size: 2rem; }
     }
     @media (min-width: 1601px) {
         h3 { font-size: 5rem; }
         h4 { font-size: 4rem; }
+        h5 { font-size: 1.8rem; }
+        h6 { font-size: 1.6rem; }
         p { font-size: 2.6rem; }
         pre { font-size: 2.3rem; }
     }

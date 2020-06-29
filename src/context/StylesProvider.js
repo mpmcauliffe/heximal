@@ -11,28 +11,29 @@ import Img from 'gatsby-image'
 // CONTAINERS
 const MainContainer = styled.main`
     width: ${p => p.article ? '90vw' : '100vw'}; 
-    margin: 0 auto;
+    margin: 8.2rem auto;
     /* opacity: .3; */
 
     @media (min-width: 769px) {
         width: 90%;
+        margin: 15rem auto;
     }
     @media (min-width: 1025px) {
         width: 60%;
+        margin: 20rem auto;
     }
     @media (min-width: 1601px) {
         width: 50%;
+        margin: 25rem auto;
     }
 `
 const PostWrapper = styled.div`
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
     height: 15rem;
-    /* width: 100vw; */
-    /* margin: 2rem 0; */
-    border-top: .1rem solid ${p => p.theme.sky};
+    margin-bottom: .2rem;
+    /* border-top: .1rem solid ${p => p.theme.sky}; */
     padding: 2rem;
     background-color: ${p => p.theme.darkPrime};
 
@@ -51,7 +52,7 @@ const PostWrapper = styled.div`
 
     @media (min-width: 769px) {
         margin: 2rem 0;
-        border: .1rem solid ${p => p.theme.sky};
+        /* border: .1rem solid ${p => p.theme.sky}; */
         border-radius: .5rem;
     }
     @media (min-width: 1025px) {
