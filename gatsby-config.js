@@ -37,7 +37,9 @@ module.exports = {
         }, {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                icon: `./hex-short-indigo.png`,
+                name: `hexAscent`,
+                short_name: `hexAscent`,
+                icon: `./hex-indigo-lt.png`,
             },
         }, {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
