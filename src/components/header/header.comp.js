@@ -11,11 +11,16 @@ export const Navbar = styled.nav`
     width: 100vw;
 
     justify-content: center;
+
+    visibility: ${p => (p.show ? 'visible' : 'hidden')};
+    transition: all 500ms ${p => (p.show ? 'ease-in' : 'ease-out')};
+    transform: ${p => (p.show ? 'none' : 'translate(0, -100%)')};
+
     /* padding-top: 9rem; */
     /* background: ${p => p.theme.primary}; */
     background: linear-gradient(to right, ${p => p.theme.primary}, ${p => p.theme.secondaryBackground});
     border-bottom: .2rem solid ${p => p.theme.primary};
-    transition: 1s;
+    /* transition: 1s; */
 
     /* @media (min-width: 1025px) { height: 11rem; }
     @media (min-width: 1601px) { height: 16rem; } */

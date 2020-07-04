@@ -7,6 +7,12 @@ import theme from 'prism-react-renderer/themes/nightOwl'
 
 
 const components = {
+    // h2: ({ children }) => (
+    //     <h2 style={{ color: 'rebeccapurple' }}>{children}</h2>
+    //   ),
+    //   'p.inlineCode': props => (
+    //     <code {...props} style={{ backgroundColor: 'lightgrey' }}></code>
+    //   ),
     pre: ({ children: { props } }) => {
         if (props.mdxType === 'code') {
             return (
