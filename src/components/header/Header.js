@@ -25,24 +25,21 @@ export const Header = ({ siteTitle, }) => {
     )
 
 
-    return useMemo(
-        () => (
-            <Navbar show={hideOnScroll}>
-                <NavGroup>
-                    <HexLink to="/">
-                        <h1>{siteTitle}</h1>
-                        {/**<p>{siteDescription}</p> */}
-                    </HexLink>
+    return (
+        <Navbar show={hideOnScroll}>
+            <NavGroup>
+                <HexLink to="/">
+                    <h1>{siteTitle}</h1>
+                    {/**<p>{siteDescription}</p> */}
+                </HexLink>
 
-                    <Toggle
-                        alt='theme-sun-moon' 
-                        src={isDarkTheme
-                            ? require(`./svg/moon.svg`)
-                            : require(`./svg/sun.svg`)}
-                        onClick={handleThemeChange} />
-                </NavGroup>
-            </Navbar>
-        ),
-        [hideOnScroll]
-    )
+                <Toggle
+                    alt='theme-sun-moon' 
+                    src={isDarkTheme
+                        ? require(`./svg/moon.svg`)
+                        : require(`./svg/sun.svg`)}
+                    onClick={handleThemeChange} />
+            </NavGroup>
+        </Navbar>
+    )       
 }
