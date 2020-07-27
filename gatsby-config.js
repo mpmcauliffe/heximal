@@ -56,7 +56,12 @@ module.exports = {
                     variants: [`400`, `100`]
                     },
                 ],
-            },
-        }
+            }, 
+        }, //{
+        //     resolve: `gatsby-transformer-remark`,
+        //     options: {
+        //         plugins: [`gatsby-remark-responsive-iframe`],
+        //     },
+        // },
     ],
 }

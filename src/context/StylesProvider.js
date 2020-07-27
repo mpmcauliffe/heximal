@@ -88,7 +88,7 @@ const PostWrapper = styled.div`
 // TEXT
 const ArticleTitle = styled.h2`
     font-size: 7rem;
-    margin: 12rem 0 0 0;
+    margin: 12rem 0 1rem 0;
 `
 const ArticleDate = styled.p`
     margin: -1rem 0 3rem 0;
@@ -96,7 +96,7 @@ const ArticleDate = styled.p`
 `
 const Caption = styled.p`
     line-height: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: -2rem;
 `
 
 // LINK
