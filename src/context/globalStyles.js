@@ -53,15 +53,19 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 1.7rem;
     }
 
+    @media (max-width: 480px) {
+        h2 { font-size: 2.7rem }
+    }
+
     @media (min-width: 1025px) {
         h3 { 
             margin-bottom: .5rem;
-            font-size: 4rem; 
+            font-size: 3rem; 
         }
-        h4 { font-size: 3.3rem; }
+        h4 { font-size: 2.5rem; }
         h5 { font-size: 1.6rem; }
         h6 { font-size: 1.3rem; }
-        p { font-size: 2.3rem; }
+        p { font-size: 2rem; }
         pre { font-size: 2rem; }
     }
     @media (min-width: 1601px) {

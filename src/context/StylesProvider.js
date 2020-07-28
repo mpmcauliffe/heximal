@@ -83,13 +83,23 @@ const PostWrapper = styled.div`
         height: 30rem;
         margin: 7rem 0;
     }
+
+    @media (max-width: 480px) {
+        div > h3 { font-size: 1.7rem; }
+        div > p { font-size: 1.5rem; }
+    }
 `
 
 // TEXT
 const ArticleTitle = styled.h2`
-    font-size: 7rem;
+    font-size: 6rem;
     line-height: 8rem;
     margin: 0 0 0 0;
+
+    @media (max-width: 480px) {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
 `
 const AuxInfo = styled.p`
     margin: 0 0 0 0;
