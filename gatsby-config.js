@@ -46,15 +46,18 @@ module.exports = {
             options: {
                 fonts: [
                     {
-                    family: `Martel`,
-                    variants: [`700`]
+                        family: `Martel`,
+                        variants: [`700`]
                     }, {  
-                    family: `Cormorant Infant`,
-                    variants: [`500i`, `300`]
+                        family: `Cormorant Infant`,
+                        variants: [`500i`, `300`]
                     }, {  
-                    family: `Catamaran`,
-                    variants: [`400`, `100`]
-                    },
+                        family: `Catamaran`,
+                        variants: [`600`,`400`, `100`]
+                    }, {
+                        family: 'Montserrat',
+                        variants: [`700`, `600`, `400`, `100`]
+                    }
                 ],
             }, 
         }, //{

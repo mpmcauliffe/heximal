@@ -88,16 +88,19 @@ const PostWrapper = styled.div`
 // TEXT
 const ArticleTitle = styled.h2`
     font-size: 7rem;
-    margin: 12rem 0 1rem 0;
+    line-height: 8rem;
+    margin: 0 0 0 0;
 `
-const ArticleDate = styled.p`
-    margin: -1rem 0 3rem 0;
-    font-style: italic;
+const AuxInfo = styled.p`
+    margin: 0 0 0 0;
+    font-weight: 100;
+    /* font-style: italic; */
 `
 const Caption = styled.p`
     line-height: 100%;
-    margin-bottom: -2rem;
+    margin-bottom: 2rem;
 `
+
 
 // LINK
 const Link = ({ children, ...props }) => {
@@ -138,6 +141,13 @@ const Thumbnail = styled(Img)`
         width: 37rem;
     }
 `
+const ProfilePic = styled.img`
+    dispaly: inline-block;
+    height: 6.5rem;
+    margin-right: 1.2rem;
+    border: .1rem solid ${p => p.theme.primary}
+    /* border-radius: 50%;     */
+`
 const Parallax = styled.img`
     background-image: url('./darkHex-backer.svg');
     top: 0;
@@ -165,10 +175,11 @@ const StylesProvider = props => {
                 HexLink,
 
                 ArticleTitle,
-                ArticleDate,
+                AuxInfo,
                 Caption,
 
                 Thumbnail,
+                ProfilePic,
                 Parallax,
 
                 isDarkTheme,

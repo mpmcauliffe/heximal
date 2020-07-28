@@ -22,10 +22,9 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 700;
     }
     h2 {
-        font-family: 'Cormorant Infant', serif;
-        font-style: italic;
+        font-family: 'Montserrat', sans-serif;
         font-size: 3.5rem;
-        font-weight: 500;
+        font-weight: 600;
     }
     h3 {
         font-family: 'Martel', serif;
@@ -33,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 400;
     }
     h4, h5, h6, li, p {
-        font-family: 'Catamaran', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
     h4 {
         font-size: 2rem;
@@ -74,3 +73,6 @@ export const GlobalStyles = createGlobalStyle`
         pre { font-size: 2.3rem; }
     }
 `
+//  font-family: 'Catamaran', sans-serif;
+//  font-family: 'Cormorant Infant', serif;
+//  font-style: italic;
