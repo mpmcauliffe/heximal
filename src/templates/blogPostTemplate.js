@@ -26,26 +26,30 @@ export default ({ data, pageContext }) => {
             
             <SpreadContainer>
                 {previous === false ? null : (
-                    <div>
+                    <Fragment>
                         {previous && (
                             <HexLink to={previous.fields.slug}>
-                                <p style={{ margin: '0 0 -1.5rem 0', }}><em>&#8592;&nbsp;Previous</em></p>
-                                <p style={{ marginLeft: '2.3rem', }}>{previous.frontmatter.title}</p>
+                                <div>
+                                    <p style={{ margin: '0 0 -1.5rem 0', }}><strong><em>&#8592;&nbsp;Previous</em></strong></p>
+                                    <p style={{ margin: '2rem 0 0 2.3rem', }}>{previous.frontmatter.title}</p>
+                                </div>
                             </HexLink>
                         )}
-                    </div>
+                    </Fragment>
                 )}
                 {next === false ? null : (
-                    <div>
+                    <Fragment>
                         {next && (
                             <HexLink
                                 to={next.fields.slug}
                                 style={{  }}>
-                                <p style={{ textAlign: 'right', margin: '0 0 -1.5rem 0', }}><em>Next&nbsp;&#8594;</em></p>
-                                <p style={{ textAlign: 'right', marginRight: '2.3rem', }}>{next.frontmatter.title}</p>
+                                <div style={{  }}>
+                                    <p style={{ textAlign: 'right', margin: '0 0 -1.5rem 0', }}><strong><em>Next&nbsp;&#8594;</em></strong></p>
+                                    <p style={{ textAlign: 'right', margin: '2rem 2.3rem 0 0', }}>{next.frontmatter.title}</p>
+                                </div>
                             </HexLink>
                         )}
-                    </div>
+                    </Fragment>
                 )}
             </SpreadContainer>
             <h6>&copy; Michael P McAuliffe 2020</h6>

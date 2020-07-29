@@ -7,24 +7,32 @@ const Shell = styled.div`
     justify-content: space-between;
     margin-top: 15rem;
 
-    >div {
+    a { width: 49.5%; }
+
+    a div {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
         height: 10rem;
         width: 100%;
         padding: 1rem;
         border-radius: .5rem;
         background-color: ${p => p.theme.primaryBackground};
     }
-    div:first-of-type {
+
+
+
+    /* div:first-of-type {
         margin-right: 1rem;
-    }
-    div:last-of-type {
+    } */
+    /* div:last-of-type {
         justify-content: flex-end;
-    }
+    } */
 
     @media (max-width: 768px) {
         flex-direction: column;
+        a { width: 100%; }
         div { margin: 0 0 1rem 0; }
     }
     @media (min-width: 1024px) {
