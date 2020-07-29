@@ -1,7 +1,8 @@
 import React, { Fragment, } from 'react'
 import { graphql, } from 'gatsby'
+// import Img from 'gatsby-image'
 // import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Layout, Content, HexLink, SpreadContainer, } from '../components'
+import { Layout, Content, HexLink, SpreadContainer, Thumbnail, } from '../components'
 
 // 2:19  warning  'Link' is defined but never used         no-unused-vars  
 // 3:10  warning  'MDXRenderer' is defined but never used  no-unused-vars  
@@ -12,7 +13,6 @@ export default ({ data, pageContext }) => {
     const { frontmatter, body } = data.mdx
     const { previous, next } = pageContext
 
-console.log(previous.frontmatter.cover.publicURL)
     return (
         <Layout article>
             {/**<Dump previous={previous} />
@@ -48,8 +48,6 @@ console.log(previous.frontmatter.cover.publicURL)
                     </Fragment>
                 )}
             </SpreadContainer>
-            <img alt='test' //src={require(`${previous.frontmatter.cover.publicURL}`)} 
-            />
             <h6>&copy; Michael P McAuliffe 2020</h6>
         </Layout>
     )
@@ -63,6 +61,9 @@ export const query = graphql`
                 title
                 date(formatString: "MMMM Do, YYYY")
                 caption
+                cover {
+                    publicURL
+                }
             }
             body
         }

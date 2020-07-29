@@ -23,6 +23,7 @@ const MainContainer = styled.main`
 
     h6 {
         text-align: center;
+        margin-bottom: 3rem;
     }
     h1, h2, h3, h4, h5, h6, p, li {
         color: ${p => p.theme.mainContent};
