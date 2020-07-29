@@ -8,7 +8,7 @@ export default ({ data, pageContext }) => {
     const { frontmatter, body } = data.mdx
     const { previous, next } = pageContext
 
-
+//console.log(previous.frontmatter)
     return (
         <Layout article>
             {/**<Dump previous={previous} />
@@ -33,7 +33,9 @@ export default ({ data, pageContext }) => {
                 {next === false ? null : (
                     <Fragment>
                         {next && (
-                            <HexLink to={next.fields.slug}>
+                            <HexLink
+                                to={next.fields.slug}
+                                style={{ marginLeft: 'auto', }}>
                                 <p>{next.frontmatter.title}&nbsp;&#8594;</p>
                             </HexLink>
                         )}

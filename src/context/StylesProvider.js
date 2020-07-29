@@ -103,7 +103,7 @@ const ArticleTitle = styled.h2`
 `
 const AuxInfo = styled.p`
     margin: 0 0 0 0;
-    font-weight: 100;
+    font-weight: 200;
     /* font-style: italic; */
 `
 const Caption = styled.p`
