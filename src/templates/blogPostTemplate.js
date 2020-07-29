@@ -1,14 +1,18 @@
 import React, { Fragment, } from 'react'
-import { graphql, Link } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Dump, Layout, Content, HexLink, SpreadContainer, } from '../components'
+import { graphql, } from 'gatsby'
+// import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { Layout, Content, HexLink, SpreadContainer, } from '../components'
+
+// 2:19  warning  'Link' is defined but never used         no-unused-vars  
+// 3:10  warning  'MDXRenderer' is defined but never used  no-unused-vars  
+// 4:10  warning  'Dump' is defined but never used         no-unused-vars
 
 
 export default ({ data, pageContext }) => {
     const { frontmatter, body } = data.mdx
     const { previous, next } = pageContext
 
-//console.log(previous.frontmatter)
+console.log(previous.frontmatter.cover.publicURL)
     return (
         <Layout article>
             {/**<Dump previous={previous} />
@@ -25,7 +29,8 @@ export default ({ data, pageContext }) => {
                     <Fragment>
                         {previous && (
                             <HexLink to={previous.fields.slug}>
-                                <p>&#8592;&nbsp;{previous.frontmatter.title}</p>
+                                <p style={{ marginBottom: '-1.5rem', }}><em>&#8592;&nbsp;Previous</em></p>
+                                <p style={{ width: '40%', marginLeft: '2.3rem', }}>{previous.frontmatter.title}</p>
                             </HexLink>
                         )}
                     </Fragment>
@@ -35,13 +40,16 @@ export default ({ data, pageContext }) => {
                         {next && (
                             <HexLink
                                 to={next.fields.slug}
-                                style={{ marginLeft: 'auto', }}>
-                                <p>{next.frontmatter.title}&nbsp;&#8594;</p>
+                                style={{ textAlign: 'right', width: '40%', }}>
+                                <p style={{ marginBottom: '-1.5rem', }}><em>Next&nbsp;&#8594;</em></p>
+                                <p style={{ marginRight: '2.3rem', }}>{next.frontmatter.title}</p>
                             </HexLink>
                         )}
                     </Fragment>
                 )}
             </SpreadContainer>
+            <img alt='test' //src={require(`${previous.frontmatter.cover.publicURL}`)} 
+            />
             <h6>&copy; Michael P McAuliffe 2020</h6>
         </Layout>
     )

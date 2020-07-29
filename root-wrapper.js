@@ -1,10 +1,13 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
-import Highlight, { defaultProps, } from 'prism-react-renderer'
+// import { defaultProps, } from 'prism-react-renderer'
 import StylesProvider from './src/context/StylesProvider'
 import Code from './src/components/code/Code'
-import theme from 'prism-react-renderer/themes/nightOwl'
+// import theme from 'prism-react-renderer/themes/nightOwl'
 
+// 3:8   warning  'Highlight' is defined but never used     no-unused-vars
+//   3:21  warning  'defaultProps' is defined but never used  no-unused-vars
+//   6:8   warning  'theme' is defined but never used         no-unused-vars
 
 const components = {
     // h2: ({ children }) => (
