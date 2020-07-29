@@ -1,7 +1,7 @@
 import React, { Fragment, } from 'react'
 import { graphql, } from 'gatsby'
 // import Img from 'gatsby-image'
-// import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Layout, Content, HexLink, SpreadContainer, Thumbnail, } from '../components'
 
 // 2:19  warning  'Link' is defined but never used         no-unused-vars  
@@ -26,26 +26,26 @@ export default ({ data, pageContext }) => {
             
             <SpreadContainer>
                 {previous === false ? null : (
-                    <Fragment>
+                    <div>
                         {previous && (
                             <HexLink to={previous.fields.slug}>
-                                <p style={{ marginBottom: '-1.5rem', }}><em>&#8592;&nbsp;Previous</em></p>
-                                <p style={{ width: '40%', marginLeft: '2.3rem', }}>{previous.frontmatter.title}</p>
+                                <p style={{ margin: '0 0 -1.5rem 0', }}><em>&#8592;&nbsp;Previous</em></p>
+                                <p style={{ marginLeft: '2.3rem', }}>{previous.frontmatter.title}</p>
                             </HexLink>
                         )}
-                    </Fragment>
+                    </div>
                 )}
                 {next === false ? null : (
-                    <Fragment>
+                    <div>
                         {next && (
                             <HexLink
                                 to={next.fields.slug}
-                                style={{ textAlign: 'right', width: '40%', }}>
-                                <p style={{ marginBottom: '-1.5rem', }}><em>Next&nbsp;&#8594;</em></p>
-                                <p style={{ marginRight: '2.3rem', }}>{next.frontmatter.title}</p>
+                                style={{  }}>
+                                <p style={{ textAlign: 'right', margin: '0 0 -1.5rem 0', }}><em>Next&nbsp;&#8594;</em></p>
+                                <p style={{ textAlign: 'right', marginRight: '2.3rem', }}>{next.frontmatter.title}</p>
                             </HexLink>
                         )}
-                    </Fragment>
+                    </div>
                 )}
             </SpreadContainer>
             <h6>&copy; Michael P McAuliffe 2020</h6>
@@ -61,9 +61,6 @@ export const query = graphql`
                 title
                 date(formatString: "MMMM Do, YYYY")
                 caption
-                cover {
-                    publicURL
-                }
             }
             body
         }
