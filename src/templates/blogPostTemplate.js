@@ -1,12 +1,8 @@
 import React, { Fragment, } from 'react'
 import { graphql, } from 'gatsby'
-// import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Layout, Content, HexLink, SpreadContainer, Thumbnail, } from '../components'
 
-// 2:19  warning  'Link' is defined but never used         no-unused-vars  
-// 3:10  warning  'MDXRenderer' is defined but never used  no-unused-vars  
-// 4:10  warning  'Dump' is defined but never used         no-unused-vars
 
 
 export default ({ data, pageContext }) => {

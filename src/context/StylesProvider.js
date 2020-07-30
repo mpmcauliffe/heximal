@@ -136,20 +136,26 @@ const HexLink = props => {
 
 // IMAGES
 const Thumbnail = styled(Img)`
-    border-radius: .5rem;
+    height: 11rem;
     width: 15rem;
+    border-radius: .5rem;
+    object-fit: cover;
 
     @media (min-width: 481px) {
+        height: 14rem;
         width: 18rem;
     }
     @media (min-width: 769px) {
+        height: 17rem;
         width: 22rem;
     }
     @media (min-width: 1025px) {
+        height: 23rem;
         width: 33rem;
     }
     @media (min-width: 1601px) {
-        width: 37rem;
+        height: 27rem;
+        width: 33rem;
     }
 `
 const ProfilePic = styled.img`

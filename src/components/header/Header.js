@@ -5,10 +5,6 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { HexLink } from '../../components'
 import { Navbar, NavGroup, Toggle, } from './header.comp'
 
-// 1:35  warning  'useMemo' is defined but never used                no-unused-vars
-//    3:10  warning  'Link' is defined but never used                   no-unused-vars
-//   14:11  warning  'rendersCount' is assigned a value but never used  no-unused-vars
-
 
 export const Header = ({ siteTitle, }) => {
     const stylesProvider                        = useContext(StylesProvider)
