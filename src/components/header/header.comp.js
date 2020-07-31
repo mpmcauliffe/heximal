@@ -11,11 +11,13 @@ export const Navbar = styled.nav`
     width: 100vw;
 
     justify-content: center;
-visibility: ${p => (window.scrollY === 0 
-        ? 'visible'
-        : p.show 
-            ? 'visible' 
-            : 'hidden' )};
+    visibility: ${p => (typeof window !== `undefined` 
+        ? window.scrollY === 0 
+            ? 'visible'
+            : p.show 
+                ? 'visible' 
+                : 'hidden'
+        : 'visible' )};
     /* visibility: ${p => (p.show ? 'visible' : 'hidden')}; */
     
     transition: all 500ms ${p => (p.show ? 'ease-in' : 'ease-out')};
