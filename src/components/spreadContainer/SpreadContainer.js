@@ -21,22 +21,16 @@ const Shell = styled.div`
         background-color: ${p => p.theme.primaryBackground};
     }
 
-
-
-    /* div:first-of-type {
-        margin-right: 1rem;
-    } */
-    /* div:last-of-type {
-        justify-content: flex-end;
-    } */
-
     @media (max-width: 768px) {
         flex-direction: column;
         a { width: 100%; }
-        div { margin: 0 0 1rem 0; }
+        a div { margin: 0 0 1rem 0; }
     }
     @media (min-width: 1024px) {
-        div { height: 15rem; }
+        a div { height: 15rem; }
+    }
+    @media (min-width: 1600px) {
+        a div { height: 18rem; }
     }
 `
 

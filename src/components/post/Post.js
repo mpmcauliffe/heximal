@@ -8,6 +8,7 @@ export const Post = ({ frontmatter, linkTo }) => {
     const { HexLink, PostWrapper, Thumbnail } = stylesContext
 
     const [cap, setCap] = useState('')
+    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
         /** IMPORTANT FOR DEPLOYMENT
@@ -17,7 +18,15 @@ export const Post = ({ frontmatter, linkTo }) => {
          */
         setCap(truncate(frontmatter.caption))
 
-    }, [])
+        const windowModifier = typeof window !== `undefined` 
+            ? window.innerWidth > 480 
+                ? false
+                : true
+            : false 
+
+        setIsMobile(windowModifier)
+
+    }, [isMobile])
 
 
     return (
@@ -29,7 +38,7 @@ export const Post = ({ frontmatter, linkTo }) => {
                         <p>{frontmatter.date}</p>
                     </div>
                     {/* <p>{cap}</p> */}
-                    {window.innerWidth > 480 && <p>{cap}</p>}
+                    {!isMobile && <p>{cap}</p>}
                 </div>
                 <div>
                     {!!frontmatter.cover 

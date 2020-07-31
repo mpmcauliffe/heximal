@@ -35,11 +35,14 @@ const MainContainer = styled.main`
         margin: 15rem auto 0 auto;
     }
     @media (min-width: 1025px) {
-        width: 60%;
+        width: 70%;
         margin: 20rem auto 0 auto;
     }
+    @media (min-width: 1281px) {
+        width: 64%;
+    }
     @media (min-width: 1601px) {
-        width: 50%;
+        width: 55%;
         margin: 25rem auto 0 auto;
     }
 `
@@ -47,7 +50,7 @@ const PostWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 11rem;
+    height: 15rem;
     margin-bottom: .2rem;
     padding: 2rem;
     background-color: ${p => p.theme.primaryBackground};
@@ -86,6 +89,7 @@ const PostWrapper = styled.div`
     }
 
     @media (max-width: 480px) {
+        height: 11rem;
         div > div { 
             display: flex;
             flex-direction: column;
@@ -158,8 +162,8 @@ const Thumbnail = styled(Img)`
         width: 22rem;
     }
     @media (min-width: 1025px) {
-        height: 23rem;
-        width: 33rem;
+        height: 20rem;
+        width: 27rem;
     }
     @media (min-width: 1601px) {
         height: 27rem;

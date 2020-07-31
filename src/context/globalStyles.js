@@ -68,6 +68,9 @@ export const GlobalStyles = createGlobalStyle`
         p { font-size: 2rem; }
         pre { font-size: 2rem; }
     }
+    @media (min-width: 1281px) {
+        p { font-size: 2.3rem; }
+    }
     @media (min-width: 1601px) {
         h3 { font-size: 5rem; }
         h4 { font-size: 4rem; }
