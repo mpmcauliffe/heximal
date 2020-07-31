@@ -28,7 +28,8 @@ export const Post = ({ frontmatter, linkTo }) => {
                         <h3>{frontmatter.title}</h3>
                         <p>{frontmatter.date}</p>
                     </div>
-                    <p>{cap}</p>
+                    {/* <p>{cap}</p> */}
+                    {window.innerWidth > 480 && <p>{cap}</p>}
                 </div>
                 <div>
                     {!!frontmatter.cover 

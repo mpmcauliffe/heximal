@@ -47,7 +47,7 @@ const PostWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15rem;
+    height: 11rem;
     margin-bottom: .2rem;
     padding: 2rem;
     background-color: ${p => p.theme.primaryBackground};
@@ -86,8 +86,14 @@ const PostWrapper = styled.div`
     }
 
     @media (max-width: 480px) {
-        div > h3 { font-size: 1.7rem; }
-        div > p { font-size: 1.5rem; }
+        div > div { 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            height: 9rem;    
+        }
+        div > h3 { font-size: 1.6rem; }
+        div > p { font-size: 1.4rem; }
     }
 `
 
@@ -110,6 +116,8 @@ const AuxInfo = styled.p`
 const Caption = styled.p`
     line-height: 100%;
     margin-bottom: 2rem;
+    border-left: 1rem solid ${p => p.theme.primary};
+    padding-left: 1rem;
 `
 
 
@@ -136,8 +144,8 @@ const HexLink = props => {
 
 // IMAGES
 const Thumbnail = styled(Img)`
-    height: 11rem;
-    width: 15rem;
+    height: 8rem;
+    width: 11rem;
     border-radius: .5rem;
     object-fit: cover;
 

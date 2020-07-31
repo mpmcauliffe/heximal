@@ -11,14 +11,15 @@ export const Navbar = styled.nav`
     width: 100vw;
 
     justify-content: center;
-
-    /* visibility: ${p => (window.scrollY === 0 
+visibility: ${p => (window.scrollY === 0 
         ? 'visible'
         : p.show 
             ? 'visible' 
-            : 'hidden' )} */
-    visibility: ${p => (p.show ? 'visible' : 'hidden')};
+            : 'hidden' )};
+    /* visibility: ${p => (p.show ? 'visible' : 'hidden')}; */
+    
     transition: all 500ms ${p => (p.show ? 'ease-in' : 'ease-out')};
+    /* transition: all 500ms 'ease-in'; */
     transform: ${p => (p.show ? 'none' : 'translate(0, -100%)')};
 
     /* padding-top: 9rem; */

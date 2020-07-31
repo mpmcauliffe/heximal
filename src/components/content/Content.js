@@ -25,7 +25,6 @@ export const Content = ({ title, date, caption, body, }) => {
                 <AuxInfo>Michael P. McAuliffe</AuxInfo>                
             </div>
             
-            
             <Caption>{caption}</Caption>
             
             <MDXRenderer>{body}</MDXRenderer>
