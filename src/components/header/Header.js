@@ -36,8 +36,8 @@ export const Header = ({ siteTitle, }) => {
                 <Toggle
                     alt='theme-sun-moon' 
                     src={isDarkTheme
-                        ? require(`./svg/moon.svg`)
-                        : require(`./svg/sun.svg`)}
+                        ? require(`./svg/silverMoon.svg`)
+                        : require(`./svg/blackSun.svg`)}
                     onClick={handleThemeChange} />
             </NavGroup>
         </Navbar>

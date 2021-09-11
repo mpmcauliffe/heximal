@@ -17,9 +17,10 @@ export const GlobalStyles = createGlobalStyle`
         
     }
     h1 {
-        font-family: 'Martel', serif;
+        /* font-family: 'Martel', serif; */
+        font-family: 'Play', sans-serif;
         font-size: 5rem;
-        font-weight: 700;
+        /* font-weight: 700; */
     }
     h2 {
         font-family: 'Montserrat', sans-serif;
@@ -27,9 +28,10 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 600;
     }
     h3 {
-        font-family: 'Martel', serif;
+        /* font-family: 'Martel', serif; */
+        font-family: 'Play', sans-serif;;
         font-size: 2.1rem;
-        font-weight: 400;
+        /* font-weight: 400; */
     }
     h4, h5, h6, li, p {
         font-family: 'Montserrat', sans-serif;

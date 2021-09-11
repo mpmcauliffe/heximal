@@ -26,8 +26,9 @@ export const Navbar = styled.nav`
 
     /* padding-top: 9rem; */
     /* background: ${p => p.theme.primary}; */
-    background: linear-gradient(to right, ${p => p.theme.primary}, ${p => p.theme.secondaryBackground});
-    border-bottom: .2rem solid ${p => p.theme.primary};
+    /* background: linear-gradient(to right, ${p => p.theme.primary}, ${p => p.theme.secondaryBackground}); */
+    background: ${p => p.theme.secondaryBackground};
+    border-bottom: .2rem solid ${p => p.theme.primaryHeader};
     /* transition: 1s; */
 
     /* @media (min-width: 1025px) { height: 11rem; }
@@ -44,10 +45,14 @@ export const NavGroup = styled.div`
 
     a > h1 {
         font-size: 4rem;
+        font-weight: 700;
         line-height: 100%;
         top: 0;
         margin: 3rem 0;
-        color: ${p => p.theme.mainHeader};
+        color: ${p => p.theme.primaryHeader};
+       /* background: -webkit-linear-gradient(130deg, rgba(242,247,255,1) 10%, rgba(128,215,255,1) 20%, rgba(242,247,255,1) 30%, rgba(242,247,255,1) 40%, rgba(128,215,255,1) 50%, rgba(242,247,255,1) 60%, rgba(242,247,255,1) 70%, rgba(128,215,255,1) 80%, rgba(242,247,255,1) 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
         transition: 1s;
     }
 

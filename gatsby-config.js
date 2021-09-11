@@ -55,6 +55,12 @@ module.exports = {
                         family: `Catamaran`,
                         variants: [`600`,`400`, `100`]
                     }, {
+                        family: `play`,
+                        variants: [`400`,`700`]
+                    }, {
+                        family: `Fira Sans Condenced`,
+                        variants: [`500`]
+                    }, {
                         family: 'Montserrat',
                         variants: [`700`, `600`, `400`, `300`, `100`]
                     }

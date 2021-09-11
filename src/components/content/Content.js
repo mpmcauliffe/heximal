@@ -21,7 +21,7 @@ export const Content = ({ title, date, caption, body, }) => {
                 marginBottom: '1rem', }}>
                 <ProfilePic
                     alt='Michael P.'
-                    src={require('./profile-pic.jpg')} />
+                    src={require('./orange-bright.png')} />
                 <AuxInfo>Michael P. McAuliffe</AuxInfo>                
             </div>
             
