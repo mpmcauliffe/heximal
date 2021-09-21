@@ -4,11 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Layout, Post, } from '../components'
 
-// 1:17  warning  'useEffect' is defined but never used   no-unused-vars
-//   1:28  warning  'useContext' is defined but never used  no-unused-vars
-//   2:10  warning  'Link' is defined but never used        no-unused-vars
-//   3:8   warning  'Img' is defined but never used         no-unused-vars
-//   5:10  warning  'HexLink' is defined but never used     no-unused-vars
+
 const IndexWrapper = styled.main`
     margin: 0 auto;
 
@@ -52,11 +48,7 @@ export const query = graphql`
                     caption
                     cover {
                         publicURL
-                        childImageSharp {
-                            sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
-                                ...GatsbyImageSharpSizes_tracedSVG
-                            }
-                        }
+                        
                     }
                 }
                 fields {
@@ -68,3 +60,9 @@ export const query = graphql`
 `
 
 // date(formatString: "MMMM Do, YYYY")
+
+// childImageSharp {
+//     sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
+//         ...GatsbyImageSharpSizes_tracedSVG
+//     }
+// }

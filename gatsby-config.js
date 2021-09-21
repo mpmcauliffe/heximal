@@ -41,32 +41,72 @@ module.exports = {
                 short_name: `hexAscent`,
                 icon: `./hex-indigo-lt.png`,
             },
-        }, {
-            resolve: `gatsby-plugin-webfonts`,
-            options: {
-                fonts: {
-                    google: [
-                        {
-                            family: `Play`,
-                            variants: [`400`,`700`]
-                        }, {
-                            family: `Fira Sans Condenced`,
-                            variants: [`500`]
-                        }, {
-                            family: 'Montserrat',
-                            variants: [`700`, `600`, `400`, `300`, `100`]
-                        }
-                    ]
-                },
-            }, 
-        }, //{
+        }, 
+        // {
+        //     resolve: `gatsby-plugin-prefetch-google-fonts`,
+        //     options: {
+        //         fonts: [
+        //             {
+        //                 family: `Play`,
+        //                 variants: [`400`, `700`]
+        //             }, {
+        //                 family: `Fira Sans Condenced`,
+        //                 variants: [`500`]
+        //             }, {
+        //                 family: 'Montserrat',
+        //                 variants: [`700`, `600`, `400`, `300`, `100`]
+        //             }
+        //         ],
+        //     },
+        // }  
+    ],
+}
+
+
+// {
+//     resolve: `gatsby-plugin-webfonts`,
+//     options: {
+//         fonts: {
+//             google: [
+//                 {
+//                     family: `Play`,
+//                     variants: [`400`,`700`]
+                // }, {
+                //     family: `Fira Sans Condenced`,
+                //     variants: [`500`]
+                // }, {
+//                     family: 'Montserrat',
+//                     variants: [`700`, `600`, `400`, `300`, `100`]
+//                 }
+//             ]
+//         },
+// }, 
+
+
+// {
+//     resolve: `gatsby-plugin-prefetch-google-fonts`,
+//     options: {
+//         fonts: [
+//             {
+//                 family: `Play`,
+//                 variants: [`400`, `700`]
+//             }, {
+//                 family: `Fira Sans Condenced`,
+//                 variants: [`500`]
+//             }, {
+//                 family: 'Montserrat',
+//                 variants: [`700`, `600`, `400`, `300`, `100`]
+//             }
+//         ],
+//     },
+
+//{
         //     resolve: `gatsby-transformer-remark`,
         //     options: {
         //         plugins: [`gatsby-remark-responsive-iframe`],
         //     },
         // },
-    ],
-}
+
 
 // {
 //     resolve: `gatsby-plugin-webfonts`,
