@@ -1,6 +1,6 @@
 // Step 1: Import React
 import * as React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import { Layout, } from '../components'
 import { StaticImage, } from 'gatsby-plugin-image'
 
