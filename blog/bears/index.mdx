@@ -11,6 +11,8 @@ embeddedImages:
 - bears.jpg
 ---
 
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
 This is Mr Bear's first blog post! Isn't it *great*?
 
 Some of my **favorite** things are:
@@ -19,7 +21,4 @@ Some of my **favorite** things are:
 * Eating
 * Discovering new bear sounds
 
-
-![image info](./bears.jpg)
-
-<img alt='bears' src={`./bears.jpg`} />
+<GatsbyImage alt='bears' image={getImage(props.localImages[0])} />

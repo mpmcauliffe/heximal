@@ -7,6 +7,9 @@ import { Layout } from '../../components'
 
 const BlogPost = ({ data }) => {
     const image = getImage(data.mdx.frontmatter.hero_image)
+    console.log(data.mdx.frontmatter.embeddedImages)
+
+
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>Posted: {data.mdx.frontmatter.date}</p>
@@ -20,7 +23,7 @@ const BlogPost = ({ data }) => {
           {data.mdx.frontmatter.hero_image_credit_text}
         </a>
       </p>
-      <MDXRenderer>
+      <MDXRenderer localImages={data.mdx.frontmatter.embeddedImages}>
         {data.mdx.body}
       </MDXRenderer>
     </Layout>
@@ -38,6 +41,11 @@ export const query = graphql`
         hero_image_credit_link
         hero_image_credit_text
         hero_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        embeddedImages {
           childImageSharp {
             gatsbyImageData
           }

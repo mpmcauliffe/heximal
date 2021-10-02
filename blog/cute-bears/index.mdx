@@ -6,6 +6,13 @@ hero_image: "./image3.png"
 hero_image_alt: "cute brown bears <3"
 hero_image_credit_text: "Ezra the Great"
 hero_image_credit_link: "https://floofy-bears"
+
+embeddedImages:
+- bears.jpg
 ---
 
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
 Wow look at all these cute bears <3! How do they do it?
+
+<GatsbyImage alt='bears' image={getImage(props.localImages[0])} />
