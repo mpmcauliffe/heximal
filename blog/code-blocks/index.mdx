@@ -1,0 +1,39 @@
+---
+title: "Code Blocks"
+date: "2021-08-03"
+
+hero_image: "./image4.jpg"
+hero_image_alt: "code block"
+hero_image_credit_text: "Kermit the Frog"
+hero_image_credit_link: "https://some-nerdy-stuff"
+---
+
+
+## Yes! Some code!
+
+Here is the `Dump` component!
+
+```jsx
+import React from 'react';
+
+const Dump = props => (
+  <div
+    style={{
+      fontSize: 20,
+      border: '1px solid #efefef',
+      padding: 10,
+      background: 'white',
+    }}>
+    {Object.entries(props).map(([key, val]) => (
+      <pre key={key}>
+        <strong style={{ color: 'white', background: 'red' }}>
+          {key} ?
+        </strong>
+        {JSON.stringify(val, '', ' ')}
+      </pre>
+    ))}
+  </div>
+);
+
+export default Dump;
+```
