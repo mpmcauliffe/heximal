@@ -15,13 +15,16 @@ export const Pre = styled.pre`
     position: relative;
 
     > div {
-        margin-bottom: 2rem;
+        margin-bottom: .75rem;
 
         span:first-of-type { margin-right: 1rem; }
     }
     & .token-line {
-        line-height: 1.3rem;
-        height: 1.3rem;
+        /* line-height: 1.3rem;
+        height: 1.3rem; */
+    }
+    .copy-button {
+        cursor: pointer;
     }
 
     @media (min-width: 1025px) {
@@ -72,7 +75,10 @@ const Code = ({ codeString, language }) => {
                 getTokenProps,
             }) => (
                 <Pre className={className} style={style}>
-                    <CopyCode onClick={handleClick}>Copy</CopyCode>
+                    <CopyCode 
+                        onClick={handleClick}
+                        className='.copy-button'
+                    >Copy</CopyCode>
                     {tokens.map((line, i) => (
                         <div {...getLineProps({ line, key: i })}>
                             <LineNo>{i + 1}</LineNo>
