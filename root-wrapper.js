@@ -1,7 +1,7 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 // import { defaultProps, } from 'prism-react-renderer'
-// import StylesProvider from './src/context/StylesProvider'
+import StylesProvider from './src/context/StylesProvider'
 import Code from './src/components/code/Code'
 // import theme from 'prism-react-renderer/themes/nightOwl'
 
@@ -30,7 +30,7 @@ const components = {
   
 
 export const wrapRootElement = ({ element }) => (
-    <div>
+    <StylesProvider>
         <MDXProvider components={components}>{element}</MDXProvider>
-    </div>
+    </StylesProvider>
 )
