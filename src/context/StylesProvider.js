@@ -5,7 +5,7 @@ import stylesContext from './stylesContext'
 import { GlobalStyles } from './globalStyles'
 import { darkTheme, lightTheme } from './theme'
 import { Link as GatsbyLink } from 'gatsby'
-// import Img from 'gatsby-image'
+import { GatsbyImage, } from 'gatsby-plugin-image'
 
 
 // CONTAINERS
@@ -26,7 +26,7 @@ const MainContainer = styled.main`
         margin-bottom: 3rem;
     }
     h1, h2, h3, h4, h5, h6, p, li {
-        color: ${p => p.theme.mainContent};
+        /* color: ${p => p.theme.mainContent}; */
         transition: 1s;
     }
 
@@ -147,8 +147,8 @@ const HexLink = props => {
 }
 
 // IMAGES
-const Thumbnail = styled.img`
-    /* height: 8rem;
+const Thumbnail = styled(GatsbyImage)`
+    /* */height: 8rem;
     width: 11rem;
     border-radius: .5rem;
     object-fit: cover;
@@ -168,13 +168,13 @@ const Thumbnail = styled.img`
     @media (min-width: 1601px) {
         height: 27rem;
         width: 33rem;
-    } */
+    } 
 `
 const ProfilePic = styled.img`
     dispaly: inline-block;
     height: 6.5rem;
     margin-right: 1.2rem;
-    border: .1rem solid ${p => p.theme.primary}
+    border: .1rem solid ${p => p.theme.primaryHeader}
     /* border-radius: 50%;     */
 `
 const Parallax = styled.img`

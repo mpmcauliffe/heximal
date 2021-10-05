@@ -1,5 +1,5 @@
 export * from './code/Code'
-export * from './content/Content'
+export * from './frontmatter/Frontmatter'
 export * from './header/Header'
 export * from './layout/Layout'
 export * from './link/HexLink'
