@@ -12,7 +12,7 @@ const BlogPost = ({ data, pageContext }) => {
 
     //const { previous, next } = pageContext
 
-    console.log(body)
+    console.log(data.mdx)
 
 
     return (
@@ -49,6 +49,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        caption
         hero_image_alt
         hero_image_credit_link
         hero_image_credit_text

@@ -1,18 +1,15 @@
 import * as React from 'react'
 import { useState, useRef, useContext, } from 'react'
 import StylesProvider from '../../context/stylesContext'
-// import { Link } from 'gatsby'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import { HexLink } from '../../components'
 import { Navbar, NavGroup, Toggle, } from './header.comp'
 
 
 export const Header = ({ siteTitle, }) => {
-    const stylesProvider                        = useContext(StylesProvider)
-    const { isDarkTheme, handleThemeChange, }   = stylesProvider
+    const stylesProvider                                 = useContext(StylesProvider)
+    const { HexLink, isDarkTheme, handleThemeChange, }   = stylesProvider
 
-    const [hideOnScroll, setHideOnScroll]       = useState(true)
-    // const rendersCount                          = useRef(0)
+    const [hideOnScroll, setHideOnScroll]                = useState(true)
 
     useScrollPosition(
         ({ prevPos, currPos }) => {

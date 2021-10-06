@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Layout } from '../components'
+import { Layout, Post, } from '../components'
 
-
-// LIAN LAW/EXPLORE.COM/COURTESY OF KATMAI NATIONAL PARK AND PRESERVE
 
 const IndexWrapper = styled.main`
     margin: 0 auto;
@@ -14,23 +12,17 @@ const IndexWrapper = styled.main`
     }
 `
 
-//x.substring(x.indexOf('_') + 1)
 const BlogPage = ({ data }) => {
     return (
-
-        <IndexWrapper>
-            <Layout>
+        <Layout>
+            <IndexWrapper>    
                 {data.allMdx.nodes.map(node => (
-                    <article key={node.id}>
-                        <h2>
-                            <Link to={`/blog/${node.slug}`}>
-                                {node.frontmatter.title}
-                            </Link>
-                        </h2>
-                        <p>Posted: {node.frontmatter.date}</p>
-                    </article>))}
-            </Layout>
-        </IndexWrapper>
+                    <Post 
+                        key={node.id}
+                        linkTo={node.slug}
+                        frontmatter={node.frontmatter} />))}
+            </IndexWrapper>
+        </Layout>
         
     )
 }
@@ -43,6 +35,12 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
+          caption
+          hero_image {
+          	childImageSharp {
+            	gatsbyImageData
+          	}
+         }
         }
         id
         slug
@@ -74,3 +72,18 @@ export default BlogPage
 
 // // Step 3: Export your component
 // export default IndexPage
+
+
+{/* <Layout>
+    <IndexWrapper>    
+        {data.allMdx.nodes.map(node => (
+            <article key={node.id}>
+                <h2>
+                    <Link to={`/blog/${node.slug}`}>
+                        {node.frontmatter.title}
+                    </Link>
+                </h2>
+                <p>Posted: {node.frontmatter.date}</p>
+            </article>))}
+    </IndexWrapper>
+</Layout> */}

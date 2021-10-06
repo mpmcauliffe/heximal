@@ -26,7 +26,7 @@ const MainContainer = styled.main`
         margin-bottom: 3rem;
     }
     h1, h2, h3, h4, h5, h6, p, li {
-        /* color: ${p => p.theme.mainContent}; */
+        color: ${p => p.theme.primaryHeader};
         transition: 1s;
     }
 
@@ -102,7 +102,7 @@ const PostWrapper = styled.div`
 `
 
 // TEXT
-const ArticleTitle = styled.h2`
+const ArticleTitle = styled.h1`
     font-size: 6rem;
     line-height: 8rem;
     margin: 0 0 0 0;
@@ -120,7 +120,8 @@ const AuxInfo = styled.p`
 const Caption = styled.p`
     line-height: 100%;
     margin-bottom: 2rem;
-    border-left: 1rem solid ${p => p.theme.primary};
+    /* border-left: 1rem solid ${p => p.theme.primary}; */
+    border-left: 1rem solid ${p => p.theme.accent};
     padding-left: 1rem;
 `
 
@@ -140,7 +141,8 @@ const StyledLink = styled(Link)`
 `
 const HexLink = props => {
     return (
-        <StyledLink {...props}>
+        <StyledLink 
+            {...props}>
             {props.children}
         </StyledLink>
     )
@@ -171,10 +173,11 @@ const Thumbnail = styled(GatsbyImage)`
     } 
 `
 const ProfilePic = styled.img`
-    dispaly: inline-block;
-    height: 6.5rem;
+    display: inline-block;
+    height: 6.6rem;
     margin-right: 1.2rem;
-    border: .1rem solid ${p => p.theme.primaryHeader}
+    padding: .1rem;
+    border: .1rem solid ${p => p.theme.accent};
     /* border-radius: 50%;     */
 `
 const Parallax = styled.img`

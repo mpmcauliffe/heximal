@@ -1,15 +1,20 @@
 import * as React from 'react'
 import { useState, useEffect, useContext, } from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import StylesContext from '../../context/stylesContext'
 import { truncate } from '../../helpers/truncate'
 
 
 export const Post = ({ frontmatter, linkTo }) => {
-    const stylesContext = useContext(StylesContext)
-    const { HexLink, PostWrapper, Thumbnail } = stylesContext
+    const stylesContext                         = useContext(StylesContext)
+    const { HexLink, PostWrapper, Thumbnail }   = stylesContext
 
-    const [cap, setCap] = useState('')
-    const [isMobile, setIsMobile] = useState(false)
+    const [cap, setCap]                         = useState('')
+    const [isMobile, setIsMobile]               = useState(false)
+
+    const image                                 = getImage(frontmatter.hero_image)
+
+    // console.log(linkTo);
 
     useEffect(() => {
         /** IMPORTANT FOR DEPLOYMENT
@@ -31,7 +36,7 @@ export const Post = ({ frontmatter, linkTo }) => {
 
 
     return (
-        <HexLink to={linkTo}>
+        <HexLink to={`/blog/${linkTo}`}>
             <PostWrapper>
                 <div  style={{ marginRight: '2rem', }}>
                     <div>
@@ -43,7 +48,7 @@ export const Post = ({ frontmatter, linkTo }) => {
                 </div>
                 <div>
                     {!!frontmatter.cover 
-                        ? (<Thumbnail sizes={frontmatter.cover.childImageSharp.sizes} />) 
+                        ? (<Thumbnail sizes={frontmatter.hero_image.childImageSharp.sizes} />) 
                         : null}
                 </div>
             </PostWrapper>
