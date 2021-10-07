@@ -3,8 +3,11 @@ export const lightTheme = {
     // primary: '#fdd54f',    
     primary: '#FF5500',
     secondary: '#212837',
+    accent: '#ff8600',
 
     primaryHeader: '#252525',
+    midGray: '#a9a9a9',
+
     // background
     primaryBackground: '#e0e6e8', 
     secondaryBackground: '#F7F4F3',

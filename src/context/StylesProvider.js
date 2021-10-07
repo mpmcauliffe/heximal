@@ -5,12 +5,13 @@ import stylesContext from './stylesContext'
 import { GlobalStyles } from './globalStyles'
 import { darkTheme, lightTheme } from './theme'
 import { Link as GatsbyLink } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, } from 'gatsby-plugin-image'
 
 
 // CONTAINERS
 const OuterContainer = styled.div`
     position: absolute;
+    min-height: 100vh;
     width: 100vw;
     top: 0;
     background-color: ${p => p.theme.secondaryBackground};
@@ -26,7 +27,7 @@ const MainContainer = styled.main`
         margin-bottom: 3rem;
     }
     h1, h2, h3, h4, h5, h6, p, li {
-        color: ${p => p.theme.mainContent};
+        color: ${p => p.theme.primaryHeader};
         transition: 1s;
     }
 
@@ -70,22 +71,22 @@ const PostWrapper = styled.div`
     }
 
     @media (min-width: 769px) {
-        margin: 2rem 0;
+        margin: .7rem 0;
         border-radius: .5rem;
     }
     @media (min-width: 1025px) {
         height: 20rem;
-        margin: 5rem 0;
+        margin: 1.5rem 0;
 
         div > h3 { margin-bottom: .5rem; }
     }
     @media (min-width: 1025px) {
         height: 25rem;
-        margin: 7rem 0;
+        margin: 2rem 0;
     }
     @media (min-width: 1601px) {
         height: 30rem;
-        margin: 7rem 0;
+        /* margin: 7rem 0; */
     }
 
     @media (max-width: 480px) {
@@ -102,10 +103,10 @@ const PostWrapper = styled.div`
 `
 
 // TEXT
-const ArticleTitle = styled.h2`
+const ArticleTitle = styled.h1`
     font-size: 6rem;
     line-height: 8rem;
-    margin: 0 0 0 0;
+    margin: 0 0 0 -0.4rem;
 
     @media (max-width: 480px) {
         font-size: 5rem;
@@ -120,7 +121,8 @@ const AuxInfo = styled.p`
 const Caption = styled.p`
     line-height: 100%;
     margin-bottom: 2rem;
-    border-left: 1rem solid ${p => p.theme.primary};
+    /* border-left: 1rem solid ${p => p.theme.primary}; */
+    border-left: 1rem solid ${p => p.theme.accent};
     padding-left: 1rem;
 `
 
@@ -140,15 +142,16 @@ const StyledLink = styled(Link)`
 `
 const HexLink = props => {
     return (
-        <StyledLink {...props}>
+        <StyledLink 
+            {...props}>
             {props.children}
         </StyledLink>
     )
 }
 
 // IMAGES
-const Thumbnail = styled(Img)`
-    height: 8rem;
+const Thumbnail = styled(GatsbyImage)`
+    /* */height: 8rem;
     width: 11rem;
     border-radius: .5rem;
     object-fit: cover;
@@ -168,13 +171,14 @@ const Thumbnail = styled(Img)`
     @media (min-width: 1601px) {
         height: 27rem;
         width: 33rem;
-    }
+    } 
 `
 const ProfilePic = styled.img`
-    dispaly: inline-block;
-    height: 6.5rem;
+    display: inline-block;
+    height: 6.6rem;
     margin-right: 1.2rem;
-    border: .1rem solid ${p => p.theme.primary}
+    padding: .1rem;
+    border: .1rem solid ${p => p.theme.accent};
     /* border-radius: 50%;     */
 `
 const Parallax = styled.img`

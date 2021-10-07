@@ -1,14 +1,20 @@
-import React, { useState, useEffect, useContext, } from 'react'
+import * as React from 'react'
+import { useState, useEffect, useContext, } from 'react'
+import { getImage } from 'gatsby-plugin-image'
 import StylesContext from '../../context/stylesContext'
 import { truncate } from '../../helpers/truncate'
 
 
 export const Post = ({ frontmatter, linkTo }) => {
-    const stylesContext = useContext(StylesContext)
-    const { HexLink, PostWrapper, Thumbnail } = stylesContext
+    const stylesContext                         = useContext(StylesContext)
+    const { HexLink, PostWrapper, Thumbnail }   = stylesContext
 
-    const [cap, setCap] = useState('')
-    const [isMobile, setIsMobile] = useState(false)
+    const [cap, setCap]                         = useState('')
+    const [isMobile, setIsMobile]               = useState(false)
+
+    const image                                 = getImage(frontmatter.hero_image)
+
+    // console.log(image)
 
     useEffect(() => {
         /** IMPORTANT FOR DEPLOYMENT
@@ -26,11 +32,12 @@ export const Post = ({ frontmatter, linkTo }) => {
 
         setIsMobile(windowModifier)
 
+    // eslint-disable-next-line
     }, [isMobile])
 
 
     return (
-        <HexLink to={linkTo}>
+        <HexLink to={`/blog/${linkTo}`}>
             <PostWrapper>
                 <div  style={{ marginRight: '2rem', }}>
                     <div>
@@ -41,8 +48,12 @@ export const Post = ({ frontmatter, linkTo }) => {
                     {!isMobile && <p>{cap}</p>}
                 </div>
                 <div>
-                    {!!frontmatter.cover 
-                        ? (<Thumbnail sizes={frontmatter.cover.childImageSharp.sizes} />) 
+                    {!!image 
+                        ? (<Thumbnail 
+                            image={image}
+                            alt='thumbnail'
+                            // sizes={frontmatter.hero_image.childImageSharp.sizes} 
+                            />) 
                         : null}
                 </div>
             </PostWrapper>

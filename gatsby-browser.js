@@ -1,15 +1,10 @@
-// custom typefaces
-import "typeface-montserrat"
+/* MAIN HEADERS */
 import "typeface-play"
+/* SUB HEADERS */
 import "typeface-fira-sans"
-// normalize CSS across browsers
-import "./src/normalize.css"
-// custom CSS styles
-import "./src/style.css"
+/* MAIN TEXT */
+import "typeface-montserrat"
 
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
+import { wrapRootElement as wrap } from './root-wrapper';
 
-import { wrapRootElement as wrap } from './root-wrapper'
-
-export const wrapRootElement = wrap
+export const wrapRootElement = wrap;

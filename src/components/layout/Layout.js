@@ -1,4 +1,5 @@
-import React, { Fragment, useContext } from 'react'
+import * as React from 'react'
+import { Fragment, useContext } from 'react'
 import StylesContext from '../../context/stylesContext'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { Header } from '../../components'

@@ -23,7 +23,8 @@ export const GlobalStyles = createGlobalStyle`
         /* font-weight: 700; */
     }
     h2 {
-        font-family: 'Montserrat', sans-serif;
+        /* font-family: 'Montserrat', sans-serif; */
+        font-family: 'Fira Sans Extra Condensed', sans-serif;
         font-size: 3.5rem;
         font-weight: 600;
     }

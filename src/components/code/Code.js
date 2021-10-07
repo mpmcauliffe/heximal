@@ -1,7 +1,7 @@
+import * as React from 'react'
+import styled from 'styled-components'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwl'
-import React from 'react'
-import styled from 'styled-components'
 import { copyToClipboard } from '../../utils/copy-to-clipboard'
 
 
@@ -15,20 +15,23 @@ export const Pre = styled.pre`
     position: relative;
 
     > div {
-        margin-bottom: 2rem;
+        margin-bottom: .5rem;
 
         span:first-of-type { margin-right: 1rem; }
     }
     & .token-line {
-        line-height: 1.3rem;
-        height: 1.3rem;
+        /* line-height: 1.3rem;
+        height: 1.3rem; */
+    }
+    .copy-button {
+        cursor: pointer;
     }
 
     @media (min-width: 1025px) {
-        > div { margin-bottom: 2.3rem; }
+        > div { margin-bottom: .75rem; }
     }
     @media (min-width: 1601px) {
-        > div { margin-bottom: 2.6rem; }
+        > div { margin-bottom: 1rem; }
     }
 `
 
@@ -72,7 +75,10 @@ const Code = ({ codeString, language }) => {
                 getTokenProps,
             }) => (
                 <Pre className={className} style={style}>
-                    <CopyCode onClick={handleClick}>Copy</CopyCode>
+                    <CopyCode 
+                        onClick={handleClick}
+                        className='.copy-button'
+                    >Copy</CopyCode>
                     {tokens.map((line, i) => (
                         <div {...getLineProps({ line, key: i })}>
                             <LineNo>{i + 1}</LineNo>

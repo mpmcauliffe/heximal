@@ -1,0 +1,31 @@
+---
+title: "Bears"
+date: "2021-07-23"
+
+published: true
+
+caption: "Maxime mollitia,
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+optio, eaque rerum! Provident similique accusantium nemo autem." 
+
+hero_image: "./image1.png"
+hero_image_alt: "A beautiful family of bears"
+hero_image_credit_text: "Ursus Vinius"
+hero_image_credit_link: "https://a-cute-bear-picture"
+
+embeddedImages:
+- bears.jpg
+---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+This is Mr Bear's first blog post! Isn't it *great*?
+
+Some of my **favorite** things are:
+
+* Napping
+* Eating
+* Discovering new bear sounds
+
+<GatsbyImage alt='bears' image={getImage(props.localImages[0])} />

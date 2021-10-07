@@ -1,9 +1,9 @@
-import React, { useContext, } from 'react'
+import * as React from 'react'
+import { useContext, } from 'react'
 import StylesContext from '../../context/stylesContext'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 
-export const Content = ({ title, date, caption, body, }) => {
+export const Frontmatter = ({ title, date, caption, body, }) => {
     const stylesContext = useContext(StylesContext)
 
     const { ArticleTitle, AuxInfo, Caption, ProfilePic, } = stylesContext
@@ -21,13 +21,11 @@ export const Content = ({ title, date, caption, body, }) => {
                 marginBottom: '1rem', }}>
                 <ProfilePic
                     alt='Michael P.'
-                    src={require('./orange-bright.png')} />
+                    src={require('./orange-bright.png').default} />
                 <AuxInfo>Michael P. McAuliffe</AuxInfo>                
             </div>
             
             <Caption>{caption}</Caption>
-            
-            <MDXRenderer>{body}</MDXRenderer>
         </div>
     )
 }
