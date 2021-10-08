@@ -9,7 +9,7 @@ export const Layout = props => {
     const { title, description } = useSiteMetadata()
     const stylesContext = useContext(StylesContext)
 
-    const { MainContainer, OuterContainer } = stylesContext
+    const { MainContainer, OuterContainer, Footer, } = stylesContext
 
 
     return (
@@ -22,7 +22,16 @@ export const Layout = props => {
             <OuterContainer>
                 <MainContainer article={props.article}>    
                     {props.children}
-                </MainContainer>  
+                </MainContainer>
+
+                <Footer>
+                    <p>&copy; Michael P McAuliffe {new Date().getFullYear()}</p>
+                    <p>&nbsp;Built with&nbsp;
+                        <a  style={{ color: '#c1beff' }}
+                            href='https://www.gatsbyjs.com'> 
+                            Gatsby
+                        </a></p>
+                </Footer>
             </OuterContainer>
         </Fragment>  
     )

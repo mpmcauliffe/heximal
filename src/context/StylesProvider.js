@@ -14,13 +14,14 @@ const OuterContainer = styled.div`
     min-height: 100vh;
     width: 100vw;
     top: 0;
+    padding-bottom: 20rem;
     background-color: ${p => p.theme.secondaryBackground};
     transition: 1s;
 `
 
 const MainContainer = styled.main`
     width: ${p => p.article ? '90vw' : '100vw'}; 
-    margin: ${p => p.article ? '20rem auto 0 auto' : '8.2rem auto 0 auto'};
+    margin: ${p => p.article ? '20rem auto 13rem auto' : '8.2rem auto 6rem auto'};
 
     h6 {
         text-align: center;
@@ -99,6 +100,19 @@ const PostWrapper = styled.div`
         }
         div > h3 { font-size: 1.6rem; }
         div > p { font-size: 1.4rem; }
+    }
+`
+const Footer = styled.section`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    p { 
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: ${p => p.theme.primaryHeader}; 
     }
 `
 
@@ -204,6 +218,7 @@ const StylesProvider = props => {
                 OuterContainer,
                 MainContainer,
                 PostWrapper,
+                Footer,
 
                 HexLink,
 

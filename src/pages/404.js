@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { Layout, Seo, } from '../components'
+import { Layout, } from '../components'
 
 
 const CenterContainer = styled.div`
@@ -16,7 +16,7 @@ const CenterContainer = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <Seo title='404: Not found' />
+    {/* <Seo title='404: Not found' /> */}
     <CenterContainer>
         <h1>404</h1>
         <p>. . . not found . . .</p>
