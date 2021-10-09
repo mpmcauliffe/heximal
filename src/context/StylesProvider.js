@@ -9,9 +9,17 @@ import { GatsbyImage, } from 'gatsby-plugin-image'
 
 
 // CONTAINERS
+const IndexWrapper = styled.main`
+    margin: 0 auto;
+
+    @media (min-width: 769px) {
+        margin: 5rem auto;
+    }
+`
+
 const OuterContainer = styled.div`
     position: absolute;
-    min-height: 100vh;
+    min-height: 110vh;
     width: 100vw;
     top: 0;
     padding-bottom: 20rem;
@@ -20,8 +28,9 @@ const OuterContainer = styled.div`
 `
 
 const MainContainer = styled.main`
-    width: ${p => p.article ? '90vw' : '100vw'}; 
-    margin: ${p => p.article ? '20rem auto 13rem auto' : '8.2rem auto 6rem auto'};
+    width: ${p => p.isArticle ? '90vw' : '100vw'}; 
+    margin: ${p => p.isArticle ? '15rem auto 13rem auto' : '8.4rem auto 6rem auto'};
+    /* padding: ${p => p.isArticle ? '.2rem' : 0}; */
 
     h6 {
         text-align: center;
@@ -38,7 +47,7 @@ const MainContainer = styled.main`
     }
     @media (min-width: 1025px) {
         width: 70%;
-        margin: 20rem auto 0 auto;
+        margin: 25rem auto 0 auto;
     }
     @media (min-width: 1281px) {
         width: 64%;
@@ -215,6 +224,7 @@ const StylesProvider = props => {
     return (
         <stylesContext.Provider
             value={{
+                IndexWrapper,
                 OuterContainer,
                 MainContainer,
                 PostWrapper,

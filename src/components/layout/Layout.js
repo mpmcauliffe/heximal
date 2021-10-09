@@ -1,16 +1,24 @@
 import * as React from 'react'
-import { Fragment, useContext } from 'react'
+import { Fragment, useState, useEffect, useContext, } from 'react'
+import { useLocation } from '@reach/router'
 import StylesContext from '../../context/stylesContext'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { Header } from '../../components'
 
 
 export const Layout = props => {
-    const { title, description } = useSiteMetadata()
-    const stylesContext = useContext(StylesContext)
-
+    const { title, description }                     = useSiteMetadata()
+    const stylesContext                              = useContext(StylesContext)
     const { MainContainer, OuterContainer, Footer, } = stylesContext
 
+    const location                                   = useLocation()
+    
+    const [isArticle, setIsArticle]                  = useState(false)
+
+    useEffect(() => {
+        if (location.pathname.includes('blog')) { setIsArticle(true) }
+    
+    }, [isArticle])
 
     return (
         <Fragment>
@@ -20,7 +28,7 @@ export const Layout = props => {
                 src={require('../../context/darkHex-backer.svg')} /> */}
             
             <OuterContainer>
-                <MainContainer article={props.article}>    
+                <MainContainer isArticle={isArticle}>    
                     {props.children}
                 </MainContainer>
 

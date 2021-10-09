@@ -12,8 +12,9 @@ export const Header = ({ siteTitle, }) => {
     const [hideOnScroll, setHideOnScroll]                = useState(true)
 
     useScrollPosition(
-        ({ prevPos, currPos }) => {
-            const isShow = currPos.y > prevPos.y
+        ({ prevPos, currPos }) => {            
+            let isShow = currPos.y > prevPos.y
+            if (currPos.y > -200) { isShow = true }
             if (isShow !== hideOnScroll) setHideOnScroll(isShow)
         },
         [hideOnScroll],

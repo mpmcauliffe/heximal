@@ -10,7 +10,7 @@ export const Frontmatter = ({ title, date, caption, body, }) => {
 
 
     return (
-        <div style={{ marginTop: '25rem' }}>
+        <div>
         {/** */}
             
             <ArticleTitle>{title}</ArticleTitle>

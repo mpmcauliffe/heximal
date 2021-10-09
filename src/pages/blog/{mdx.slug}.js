@@ -1,15 +1,16 @@
 import * as React from 'react'
+import { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Layout, Frontmatter, HexLink, SpreadContainer, } from '../../components'
+import { Layout, Frontmatter, HexLink, Post, SpreadContainer, } from '../../components'
 
 
 const BlogPost = ({ data, pageContext }) => {
 
     const { frontmatter, }     = data.mdx 
     const image                = getImage(data.mdx.frontmatter.hero_image)
-
+console.log(data);
     // const { previous, next }      = pageContext
     // console.log(image)
 
@@ -17,6 +18,7 @@ const BlogPost = ({ data, pageContext }) => {
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
             <Frontmatter 
+                id='article-header'
                 title={frontmatter.title}
                 date={frontmatter.date}
                 caption={frontmatter.caption} />
@@ -38,6 +40,16 @@ const BlogPost = ({ data, pageContext }) => {
             <MDXRenderer localImages={data.mdx.frontmatter.embeddedImages}>
                 {data.mdx.body}
             </MDXRenderer>
+
+            <p>Back To Top</p>
+            
+            <Fragment>
+                {data.allMdx.nodes.map(node => (
+                    <Post 
+                        key={node.id}
+                        linkTo={node.slug}
+                        frontmatter={node.frontmatter} />))}
+            </Fragment>   
         </Layout>
     )
 }
@@ -63,6 +75,23 @@ export const query = graphql`
             gatsbyImageData
           }
         }
+      }
+    }
+    allMdx(sort: {fields: frontmatter___date, order: DESC}
+    filter: {frontmatter: {published: {eq: true}}}) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+          caption
+          hero_image {
+          	childImageSharp {
+            	gatsbyImageData
+          	}
+         }
+        }
+        id
+        slug
       }
     }
   }
