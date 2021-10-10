@@ -23,6 +23,7 @@ export const Layout = props => {
     return (
         <Fragment>
             <Header siteTitle={title} siteDescription={description} />
+            <div id='header' />
             {/**<Parallax
                 alt='parallax'
                 src={require('../../context/darkHex-backer.svg')} /> */}

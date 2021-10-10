@@ -1,39 +1,35 @@
 import * as React from 'react'
-import { Fragment } from 'react'
+import { Fragment, useContext, } from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
+import StylesContext from '../../context/stylesContext'
 import { Layout, Frontmatter, HexLink, Post, SpreadContainer, } from '../../components'
 
 
 const BlogPost = ({ data, pageContext }) => {
+    const stylesContext                                      = useContext(StylesContext)
+    const { IndexWrapper, RegularButton, SmallContainer, }   = stylesContext 
 
     const { frontmatter, }     = data.mdx 
     const image                = getImage(data.mdx.frontmatter.hero_image)
-console.log(data);
-    // const { previous, next }      = pageContext
-    // console.log(image)
 
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
             <Frontmatter 
-                id='article-header'
+                id='header'
                 title={frontmatter.title}
                 date={frontmatter.date}
                 caption={frontmatter.caption} />
 
-            {/* <p>{data.mdx.frontmatter.date}</p> */}
+            {/*  */}
             <GatsbyImage
                 image={image}
                 style={{ width: '100%' }}
                 alt={data.mdx.frontmatter.hero_image_alt} />
-            {/* <p>
-                Photo Credit:{" "}
-                <a href={data.mdx.frontmatter.hero_image_credit_link}>
-                {data.mdx.frontmatter.hero_image_credit_text}
-                </a>
-            </p> */}
+            {/*  */}
              
 
             
@@ -41,15 +37,33 @@ console.log(data);
                 {data.mdx.body}
             </MDXRenderer>
 
-            <p>Back To Top</p>
+            <SmallContainer
+                direction='row'
+                justify='center'
+                align='center'>
+
+                <ScrollLink
+                    to='header'
+                    smooth={true}
+                    duration={500}>
+
+                    <RegularButton>Back To Top</RegularButton>
+                </ScrollLink>
+            </SmallContainer>
             
-            <Fragment>
+            
+
+            <IndexWrapper>
+                <h2>More Blogs</h2>
                 {data.allMdx.nodes.map(node => (
-                    <Post 
-                        key={node.id}
-                        linkTo={node.slug}
-                        frontmatter={node.frontmatter} />))}
-            </Fragment>   
+                    <Fragment key={node.id}>
+                        {node.frontmatter.title !== frontmatter.title 
+                            ? <Post 
+                                linkTo={node.slug}
+                                frontmatter={node.frontmatter} />
+                            : <hr />}
+                    </Fragment>))}
+            </IndexWrapper>   
         </Layout>
     )
 }
@@ -78,7 +92,7 @@ export const query = graphql`
       }
     }
     allMdx(sort: {fields: frontmatter___date, order: DESC}
-    filter: {frontmatter: {published: {eq: true}}}) {
+     ) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -95,7 +109,7 @@ export const query = graphql`
       }
     }
   }
-`
+` // filter: {frontmatter: {published: {eq: true}}})
 
 export default BlogPost
 

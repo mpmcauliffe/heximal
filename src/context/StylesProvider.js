@@ -61,7 +61,7 @@ const PostWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15rem;
+    height: 17rem;
     margin-bottom: .2rem;
     padding: 2rem;
     background-color: ${p => p.theme.primaryBackground};
@@ -123,6 +123,19 @@ const Footer = styled.section`
         font-weight: 500;
         color: ${p => p.theme.primaryHeader}; 
     }
+    a { text-decoration: none; }
+`
+const SmallContainer = styled.section`
+    margin: 15rem auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: ${p => p.direction};
+    justify-content: ${p => p.justify};
+    align-items: ${p => p.align};
+
+    @media (min-width: 769px) { margin: 21rem auto; }
+    @media (min-width: 1280px) { margin: 25rem auto; }
 `
 
 // TEXT
@@ -171,6 +184,27 @@ const HexLink = props => {
         </StyledLink>
     )
 }
+
+// BUTTONS
+const RegularButton = styled.button`
+    width: 100%;
+    padding: 2rem 5rem;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: ${p => p.theme.mainContent};
+
+    outline: none;
+    background: transparent;
+    border: .3rem solid ${p => p.theme.mainContent};
+    border-radius: 2rem;
+
+    cursor: pointer;
+
+    @media (min-width: 541px) { width: 70%; }
+    @media (min-width: 769px) { width: 33rem; }
+`
 
 // IMAGES
 const Thumbnail = styled(GatsbyImage)`
@@ -227,10 +261,13 @@ const StylesProvider = props => {
                 IndexWrapper,
                 OuterContainer,
                 MainContainer,
+                SmallContainer,
                 PostWrapper,
                 Footer,
 
                 HexLink,
+
+                RegularButton,
 
                 ArticleTitle,
                 AuxInfo,
