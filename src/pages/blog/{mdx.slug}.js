@@ -92,7 +92,7 @@ export const query = graphql`
       }
     }
     allMdx(sort: {fields: frontmatter___date, order: DESC}
-     ) {
+        filter: {frontmatter: {published: {eq: true}}}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -109,7 +109,7 @@ export const query = graphql`
       }
     }
   }
-` // filter: {frontmatter: {published: {eq: true}}})
+` // 
 
 export default BlogPost
 

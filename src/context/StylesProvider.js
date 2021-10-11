@@ -61,7 +61,7 @@ const PostWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 17rem;
+    height: 15rem;
     margin-bottom: .2rem;
     padding: 2rem;
     background-color: ${p => p.theme.primaryBackground};
@@ -100,7 +100,7 @@ const PostWrapper = styled.div`
     }
 
     @media (max-width: 480px) {
-        height: 11rem;
+        height: 13.5rem;
         div > div { 
             display: flex;
             flex-direction: column;
