@@ -1,0 +1,47 @@
+---
+title: "Grid Component"
+date: "2021-09-01"
+caption: "Grid bears with MDX and Gatsby Image."
+
+published: true
+
+hero_image: "./image6.png"
+hero_image_alt: "A bear sleuth"
+hero_image_credit_text: "Ursus Vinius"
+hero_image_credit_link: "https://snoot-root"
+---
+
+
+*from 'You don’t need a media query for that — #2 Responsive Columns'*
+
+When it comes to building flexible responsive layouts we’ve relied on media
+queries for quite some time, but did you know that you may not actually need
+them?
+
+
+## A quick tip
+
+Using CSS grid we can create a list of cards that automatically fit and resize
+to the available space with just three lines of CSS. Specifically, the
+following three lines:
+
+```css
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+grid-gap: 9px;
+```
+
+You can just stop here and view the Codepen, or you can carry on and I’ll explain what is going on.
+
+Read more [here](https://medium.com/@mandy.michael/you-dont-need-a-media-query-for-that-2-responsive-columns-2582c6ea8700)
+
+## Here are the images!
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+
+import { GridStructure, } from '../../src/aux-components'
+
+<GridStructure 
+    modifier={0}
+    itemCount={7}
+    extension={'jpg'} />
+        

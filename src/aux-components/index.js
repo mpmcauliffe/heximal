@@ -1,1 +1,1 @@
-export * from './flexIStructure/FlexStructure'
+export * from './gridStructure/GridStructure'

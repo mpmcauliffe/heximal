@@ -14,7 +14,7 @@ export const Post = ({ frontmatter, linkTo }) => {
 
     const image                                 = getImage(frontmatter.hero_image)
 
-    // console.log(image)
+    // console.log(frontmatter.hero_image)
 
     useEffect(() => {
         /** IMPORTANT FOR DEPLOYMENT

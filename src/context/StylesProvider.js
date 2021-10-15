@@ -202,7 +202,7 @@ const RegularButton = styled.button`
 
     cursor: pointer;
 
-    @media (min-width: 541px) { width: 70%; }
+    /* @media (min-width: 541px) { width: 70%; } */
     @media (min-width: 769px) { width: 33rem; }
 `
 
