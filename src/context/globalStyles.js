@@ -34,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 2.1rem;
         /* font-weight: 400; */
     }
-    h4, h5, h6, li, p {
+    h4, h5, h6, p, li {
         font-family: 'Montserrat', sans-serif;
     }
     h4 {
@@ -48,12 +48,17 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 1rem;
         font-weight: 100;
     }
-    p {
+    p, li {
         font-size: 1.7rem;
         font-weight: 400;
     }
     pre {
         font-size: 1.7rem;
+    }
+    a, a:visited {
+        color: #0066ff;
+        font-weight: 500;
+        text-decoration: none;
     }
 
     @media (max-width: 480px) {
@@ -68,18 +73,18 @@ export const GlobalStyles = createGlobalStyle`
         h4 { font-size: 2.5rem; }
         h5 { font-size: 1.6rem; }
         h6 { font-size: 1.3rem; }
-        p { font-size: 2rem; }
+        p, li { font-size: 2rem; }
         pre { font-size: 2rem; }
     }
     @media (min-width: 1281px) {
-        p { font-size: 2.3rem; }
+        p, li { font-size: 2.3rem; }
     }
     @media (min-width: 1601px) {
         h3 { font-size: 5rem; }
         h4 { font-size: 4rem; }
         h5 { font-size: 1.8rem; }
         h6 { font-size: 1.6rem; }
-        p { font-size: 2.6rem; }
+        p, li { font-size: 2.6rem; }
         pre { font-size: 2.3rem; }
     }
 `
