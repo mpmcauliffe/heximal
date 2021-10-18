@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 import StylesContext from '../../context/stylesContext'
-import { Layout, Frontmatter, HexLink, Post, SpreadContainer, } from '../../components'
+import { Layout, Frontmatter, HexLink, Post, Seo, SpreadContainer, } from '../../components'
 
 
 const BlogPost = ({ data, pageContext }) => {
@@ -18,6 +18,11 @@ const BlogPost = ({ data, pageContext }) => {
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
+            <Seo 
+                title={frontmatter.title}
+                author={`Michael P McAuliffe`}
+                description={frontmatter.caption} />
+
             <Frontmatter 
                 id='header'
                 title={frontmatter.title}

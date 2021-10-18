@@ -1,8 +1,9 @@
 module.exports = {
     siteMetadata: {
         title: `hexBox`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `Mr Bear`,
+        description: `A coding and user experience journey.`,
+        author: `Michael P McAuliffe`,
+        image: '/hex.png',
         siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     },
     flags: {

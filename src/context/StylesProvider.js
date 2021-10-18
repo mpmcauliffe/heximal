@@ -47,7 +47,8 @@ const MainContainer = styled.main`
     }
     @media (min-width: 1025px) {
         width: 70%;
-        margin: 25rem auto 0 auto;
+        /* margin: 25rem auto 0 auto; */
+        margin: ${p => p.isArticle ? '25rem auto 0 auto' : '15rem auto 0 auto'};
     }
     @media (min-width: 1281px) {
         width: 64%;
