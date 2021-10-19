@@ -14,12 +14,14 @@ const BlogPost = ({ data, pageContext }) => {
 
     const { frontmatter, }     = data.mdx 
     const image                = getImage(data.mdx.frontmatter.hero_image)
+    const seoImage             = frontmatter.hero_image.publicURL
 
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
             <Seo 
                 title={frontmatter.title}
+                image={seoImage}
                 author={`Michael P McAuliffe`}
                 description={frontmatter.caption} />
 
@@ -85,6 +87,7 @@ export const query = graphql`
         hero_image_credit_link
         hero_image_credit_text
         hero_image {
+          publicURL
           childImageSharp {
             gatsbyImageData
           }

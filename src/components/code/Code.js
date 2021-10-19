@@ -1,7 +1,10 @@
 import * as React from 'react'
+import { useEffect, useContext, } from 'react'
+import StylesProvider from '../../context/stylesContext'
 import styled from 'styled-components'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/nightOwl'
+import darkTheme from 'prism-react-renderer/themes/palenight'
+import lightTheme from 'prism-react-renderer/themes/github'
 import { copyToClipboard } from '../../utils/copy-to-clipboard'
 
 
@@ -55,9 +58,12 @@ const CopyCode = styled.button`
 
 
 const Code = ({ codeString, language }) => {
-    const handleClick = () => {
-        copyToClipboard(codeString);
-    }
+    const stylesProvider     = useContext(StylesProvider)
+    const { isDarkTheme, }   = stylesProvider
+
+    const handleClick = () => { copyToClipboard(codeString) }
+
+    useEffect(() => { }, [isDarkTheme])
 
 
     return (
@@ -65,7 +71,7 @@ const Code = ({ codeString, language }) => {
             {...defaultProps}
             code={codeString}
             language={language}
-            theme={theme} >
+            theme={isDarkTheme ? darkTheme : lightTheme} >
 
             {({
                 className,

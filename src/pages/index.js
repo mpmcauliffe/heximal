@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Layout, Post, } from '../components'
+import { Layout, Post, Seo, } from '../components'
 
 
 const IndexWrapper = styled.main`
@@ -14,10 +14,11 @@ const IndexWrapper = styled.main`
 
 const BlogPage = ({ data }) => {
 
-    // console.log(data.allMdx);
+    // console.log(data.allMdx.nodes)
     
     return (
         <Layout>
+            <Seo title={`hexBox`} />
             <IndexWrapper>    
                 {data.allMdx.nodes.map(node => (
                     <Post 

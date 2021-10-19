@@ -8,7 +8,7 @@ export const BrokenLine = ({ thickness }) => {
     
     return (
         <Fragment>
-            {numberOfLines.map(line => <br />)}
+            {numberOfLines.map(line => <br key={line} />)}
         </Fragment>
     )
 }
