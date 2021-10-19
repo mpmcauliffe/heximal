@@ -3,8 +3,8 @@ module.exports = {
         title: `hexBox`,
         description: `A coding and user experience journey.`,
         author: `Michael P McAuliffe`,
-        image: '/hex.png',
-        siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+        image: `src/images/hex.png`,
+        // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     },
     flags: {
         DEV_SSR: false,
@@ -33,7 +33,8 @@ module.exports = {
             // https://css-tricks.com/meta-theme-color-and-trickery/
             // theme_color: `#663399`,
             display: `minimal-ui`,
-            icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+            // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+            icon: `src/images/hex-small.png`,
           },
         }, 
         // this (optional) plugin enables Progressive Web App + Offline functionality
