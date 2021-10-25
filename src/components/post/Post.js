@@ -5,7 +5,7 @@ import StylesContext from '../../context/stylesContext'
 import { truncate } from '../../helpers/truncate'
 
 
-export const Post = ({ frontmatter, linkTo }) => {
+export const Post = ({ frontmatter, linkTo, readTime }) => {
     const stylesContext                         = useContext(StylesContext)
     const { HexLink, PostWrapper, Thumbnail }   = stylesContext
 
@@ -44,8 +44,8 @@ export const Post = ({ frontmatter, linkTo }) => {
                         <h3>{frontmatter.title}</h3>
                         <p>{frontmatter.date}</p>
                     </div>
-                    {/* <p>{cap}</p> */}
-                    {!isMobile && <p>{cap}</p>}
+                    {/* <p>{cap}</p> {!isMobile && <p>{cap}</p>}*/}
+                    <p>{readTime}</p>
                 </div>
                 <div>
                     {!!image 

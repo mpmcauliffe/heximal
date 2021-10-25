@@ -12,10 +12,11 @@ const BlogPost = ({ data, pageContext }) => {
     const stylesContext                                      = useContext(StylesContext)
     const { IndexWrapper, RegularButton, SmallContainer, }   = stylesContext 
 
-    const { frontmatter, }     = data.mdx 
-    const image                = getImage(data.mdx.frontmatter.hero_image)
-    const seoImage             = frontmatter.hero_image.publicURL
+    const { fields, frontmatter, }     = data.mdx 
+    const image                        = getImage(data.mdx.frontmatter.hero_image)
+    const seoImage                     = frontmatter.hero_image.publicURL
 
+console.log(fields.readingTime.text);
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
@@ -29,7 +30,8 @@ const BlogPost = ({ data, pageContext }) => {
                 id='header'
                 title={frontmatter.title}
                 date={frontmatter.date}
-                caption={frontmatter.caption} />
+                caption={frontmatter.caption}
+                readTime={fields.readingTime.text} />
 
             {/*  */}
             <GatsbyImage
@@ -78,27 +80,31 @@ const BlogPost = ({ data, pageContext }) => {
 export const query = graphql`
   query($slug: String) {
     mdx(slug: {eq: $slug}) {
-      body
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        caption
-        hero_image_alt
-        hero_image_credit_link
-        hero_image_credit_text
-        hero_image {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
+    body
+    frontmatter {
+      title
+      date(formatString: "MMMM DD, YYYY")
+      caption
+      hero_image_alt
+      hero_image_credit_link
+      hero_image_credit_text
+      hero_image {
+        childImageSharp {
+          gatsbyImageData
         }
-        embeddedImages {
-          childImageSharp {
-            gatsbyImageData
-          }
+      }
+      embeddedImages {
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
+    fields {
+      readingTime {
+        text
+      }
+    }
+  }
     allMdx(sort: {fields: frontmatter___date, order: DESC}
         filter: {frontmatter: {published: {eq: true}}}) {
       nodes {
@@ -120,6 +126,9 @@ export const query = graphql`
 ` // 
 
 export default BlogPost
+
+// hero_image_credit_link
+//         hero_image_credit_text
 
 // export default ({ data, pageContext }) => {
 //     const { frontmatter, body } = data.mdx

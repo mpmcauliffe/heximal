@@ -16,6 +16,7 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-mdx`,
         `gatsby-plugin-styled-components`,
+        'gatsby-remark-reading-time',
         {
             resolve: "gatsby-source-filesystem",
             options: {

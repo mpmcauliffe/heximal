@@ -24,7 +24,8 @@ const BlogPage = ({ data }) => {
                     <Post 
                         key={node.id}
                         linkTo={node.slug}
-                        frontmatter={node.frontmatter} />))}
+                        frontmatter={node.frontmatter}
+                        readTime={node.fields.readingTime.text} />))}
             </IndexWrapper>
         </Layout>    
     )
@@ -33,24 +34,31 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}
-    filter: {frontmatter: {published: {eq: true}}}) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          caption
-          hero_image {
-          	childImageSharp {
-            	gatsbyImageData
-          	}
-         }
+  allMdx(
+    sort: {fields: frontmatter___date, order: DESC}
+    filter: {frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
+        caption
+        hero_image {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
-        id
-        slug
+      }
+      id
+      slug
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }
+}
 `
 
 

@@ -3,7 +3,7 @@ import { useContext, } from 'react'
 import StylesContext from '../../context/stylesContext'
 
 
-export const Frontmatter = ({ title, date, caption, body, }) => {
+export const Frontmatter = ({ title, date, readTime, caption, body, }) => {
     const stylesContext = useContext(StylesContext)
 
     const { ArticleTitle, AuxInfo, Caption, ProfilePic, } = stylesContext
@@ -14,7 +14,8 @@ export const Frontmatter = ({ title, date, caption, body, }) => {
         {/** */}
             
             <ArticleTitle>{title}</ArticleTitle>
-            <AuxInfo style={{ marginBottom: '10rem', }}>{date}</AuxInfo>
+            <AuxInfo style={{  }}>{date}</AuxInfo>
+            <AuxInfo style={{ marginBottom: '10rem', }}>{readTime}</AuxInfo>
             <div style={{ display: 'flex',
                 justifyContent: 'flex-start',
                 alignItems: 'center', 
