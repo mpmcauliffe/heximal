@@ -10,19 +10,22 @@ hero_image_alt: "gradient button in code"
 hero_image_credit: "Michael McAuliffe"
 ---
 
+import { BrokenLine, GridStructure, } from '../../src/aux-components'
 
-When it comes to styling buttons there are a variety of approaches. Should the button be minimalist, 
-or should the button mimic a piece of hardware coming off of your webpage? The answer depends on what you 
-want your user to do. If the “call to action” on your page is a button, then that button should stand out 
-against everything else on the page. Sometimes you may not want a button to scream, “CLICK ME!” at your 
-users and there are plenty of ways to accomplish this too.  
+<BrokenLine thickness={8} />
 
-I am going to cover 2 methods for styling buttons with gradients in this post. The CSS propert border-image 
+When it comes to styling buttons there are a variety of approaches. Should the button be minimalist, or should 
+the button mimic a piece of hardware coming off of your webpage? The answer depends on what you want your user 
+to do. If the “call to action” on your page is a button, then that button should stand out against everything 
+else on the page. Sometimes you may not want a button to scream, “CLICK ME!” at your users and there are plenty 
+of ways to accomplish this too.   
+
+I am going to cover 2 methods for styling buttons with gradients in this post. The CSS property, border-image, 
 can make your button pop, yet remain subtle enough not to disrupt your composition. However, the border-image 
-property has some limitations, so I am going to cover another property that is useful: background-image. Yes, 
-background-image is also useful for styling buttons and it is quite handy when you want your button to pop 
-off the page.
+property has some limitations, so I will cover another helpful property: background-image. Yes, background-image 
+is also useful for styling buttons and is quite handy when you want your button to pop off the page.
 
+<BrokenLine thickness={5} /> 
 
 ## Gradients on Buttons using the Border Image Property
 
@@ -31,13 +34,15 @@ off the page.
     border-style: solid;
     border-width: 4px;
     border-image: linear-gradient
-        (180deg, rgb(170,225,255) 33%, 
-            rgb(100,190,255) 84%,
-            rgb(50,140,255) 100%
+        (180deg, rgb(170, 225, 255) 33%, 
+            rgb(100, 190, 255) 67%, 
+            rgb(50, 140, 255) 91%, 
+            rgb(25, 70, 200) 100%
         ) 1; /* Pay close attention to this 1 */
 
     width: 180px;
     padding: 15px;
+    background-color: transparent;
 }
 ```
 
@@ -46,12 +51,123 @@ off the page.
     <button class="button">Border Image</button>
 ```
 
+This will create a basic button with border gradient and a transparent background.
+
+<GridStructure 
+    modifier={13}
+    itemCount={1}
+    extension={'png'} />
+
+<BrokenLine thickness={5} />
+
+### Considerations
+
+Accessibility is also another crucial factor of web development. You can ensure that the colors
+and font size you are using to create a high enough contrast ratio [here](https://accessible-colors.com/).
+ 
+It is also important to consider the transparent background of this button and how that may work
+on your composition under normal circumstances. This button will work better on a white background. But
+that may not be the case on every website so let's add a background to this button.
+
+
+```css
+.button { 
+    /* Previous code . . . */
+
+    background-color: linear-gradient
+        (0deg, rgb(210, 210, 210) 10%, 
+            rgb(230, 230, 230) 30%, 
+            rgb(240, 240, 240) 80%, 
+            rgb(255, 255, 255) 88%
+        );
+}
+```
+#### Or
+
+```css
+    .button { 
+    /* Previous code . . . */
+
+    background-color: linear-gradient(
+            rgb(170,225,255) 33%, 
+            rgb(100,190,255) 67%, 
+            rgb(50, 140,255) 91%, 
+            rgb(25,70,200) 100%
+        );
+}
+```
+<GridStructure 
+    modifier={14}
+    itemCount={2}
+    extension={'png'} />
+
+This fixes problems that can arise from transparency. Users may oftentimes have night-mode plugins
+on their browsers that may hide some content or make some things difficult to see.
+
+<BrokenLine thickness={5} /> 
+
 ### Limitations
 
-The border-radius property doesn’t work as expected on borders styled with the border-image property.
+The border-radius property doesn’t work as expected on borders styled with the border-image 
+property. There's a complex way to get around this issue, but I will not be going over that 
+here.
 
-Opera Mini only provides partial support for border-image.
+Opera Mini, UC (Android), QQ, Baidu, and KaiOS Browsers only provide partial support for 
+border-image with associated properties and values. For updates on border-image browser support
+check [here](https://caniuse.com/border-image).
 
+
+
+
+<BrokenLine thickness={8} /> 
 
 ## Gradients on Buttons using the Background Image Property
+
+```css
+.button-double-border { 
+    width: 231px;
+    height: 77px;
+    padding: 9px;
+
+    border: double 1px transparent;    
+    border-radius: 50px;
+    background-image: linear-gradient
+        (180deg, rgb(210, 210, 210) 10%, 
+            rgb(230, 230, 230) 30%, 
+            rgb(240, 240, 240) 80%, 
+            rgb(255, 255, 255) 88%
+        ), 
+        linear-gradient
+        (180deg, rgb(170, 225, 255) 33%, 
+            rgb(100, 190, 255) 67%, 
+            rgb(50, 140,255) 91%, 
+            rgb(25, 70, 200) 100%
+        );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+```
+```html
+    <button class="button-double-border">Background Image</button>
+```
+Using a double border with the background-image property will allow you to create gradient borders 
+while incorporating the border-radius property into the design.
+
+<BrokenLine thickness={3} /> 
+
+<GridStructure 
+    modifier={16}
+    itemCount={1}
+    extension={'png'} />
+
+<BrokenLine thickness={3} /> 
+
+With buttons like these, I like to control the absolute size using the height and width properties. Border
+thickness can be controlled with the padding property. More padding means a thicker border.
+
+Play with the background-origin and background-clip properties to see how those are vital for this component’s style. 
+Using the background-origin property will ensure that both images will start in the upper-left-most boundary of the 
+element. Without the background-clip property, the internal gradient wouldn’t have limits and thus expand to fill 
+the element into its border. Removing this feature would cover our border gradient leaving only the gray/white 
+background visible. 
 
