@@ -1,0 +1,57 @@
+---
+title: "Use Gradients to Style Your Buttons"
+date: "2022-01-10"
+caption: "When used properly, gradients can add flavor to your layout."
+
+published: true
+
+hero_image: "./image1.png"
+hero_image_alt: "gradient button in code"
+hero_image_credit: "Michael McAuliffe"
+---
+
+
+When it comes to styling buttons there are a variety of approaches. Should the button be minimalist, 
+or should the button mimic a piece of hardware coming off of your webpage? The answer depends on what you 
+want your user to do. If the “call to action” on your page is a button, then that button should stand out 
+against everything else on the page. Sometimes you may not want a button to scream, “CLICK ME!” at your 
+users and there are plenty of ways to accomplish this too.  
+
+I am going to cover 2 methods for styling buttons with gradients in this post. The CSS propert border-image 
+can make your button pop, yet remain subtle enough not to disrupt your composition. However, the border-image 
+property has some limitations, so I am going to cover another property that is useful: background-image. Yes, 
+background-image is also useful for styling buttons and it is quite handy when you want your button to pop 
+off the page.
+
+
+## Gradients on Buttons using the Border Image Property
+
+```css
+.button { 
+    border-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient
+        (180deg, rgb(170,225,255) 33%, 
+            rgb(100,190,255) 84%,
+            rgb(50,140,255) 100%
+        ) 1; /* Pay close attention to this 1 */
+
+    width: 180px;
+    padding: 15px;
+}
+```
+
+
+```html
+    <button class="button">Border Image</button>
+```
+
+### Limitations
+
+The border-radius property doesn’t work as expected on borders styled with the border-image property.
+
+Opera Mini only provides partial support for border-image.
+
+
+## Gradients on Buttons using the Background Image Property
+
