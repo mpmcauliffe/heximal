@@ -49,8 +49,9 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 100;
     }
     p, li {
-        font-size: 1.7rem;
+        font-size: 1.9rem;
         font-weight: 400;
+        line-height: 3.3rem;
     }
     pre {
         font-size: 1.7rem;
@@ -73,18 +74,18 @@ export const GlobalStyles = createGlobalStyle`
         h4 { font-size: 2.5rem; }
         h5 { font-size: 1.6rem; }
         h6 { font-size: 1.3rem; }
-        p, li { font-size: 2rem; }
+        p, li { font-size: 2.3rem; }
         pre { font-size: 2rem; }
     }
     @media (min-width: 1281px) {
-        p, li { font-size: 2.3rem; }
+        p, li { font-size: 2.5rem; }
     }
     @media (min-width: 1601px) {
         h3 { font-size: 5rem; }
         h4 { font-size: 4rem; }
         h5 { font-size: 1.8rem; }
         h6 { font-size: 1.6rem; }
-        p, li { font-size: 2.6rem; }
+        p, li { font-size: 2.7rem; }
         pre { font-size: 2.3rem; }
     }
 `

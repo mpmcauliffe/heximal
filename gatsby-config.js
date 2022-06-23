@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `hexBox`,
+        title: `hexAscent`,
         description: `A coding and user experience journey.`,
         author: `Michael P McAuliffe`,
         image: `src/images/hex.png`,

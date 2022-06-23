@@ -36,7 +36,7 @@ console.log(fields.readingTime.text);
             {/*  */}
             <GatsbyImage
                 image={image}
-                style={{ width: '100%' }}
+                style={{ width: '100%', border: '1px solid #777' }}
                 alt={data.mdx.frontmatter.hero_image_alt} />
             {/*  */}
              
