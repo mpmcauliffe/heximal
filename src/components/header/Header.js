@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState, useContext, } from 'react'
 import StylesProvider from '../../context/stylesContext'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import { Navbar, NavGroup, Toggle, } from './header.comp'
+import { Navbar, NavGroup, NavLogo, Toggle, } from './header.comp'
 
 
 export const Header = ({ siteTitle, }) => {
@@ -28,8 +28,12 @@ export const Header = ({ siteTitle, }) => {
         <Navbar show={hideOnScroll}>
             <NavGroup>
                 <HexLink to="/">
-                    <h1>{siteTitle}</h1>
-                    {/**<p>{siteDescription}</p> */}
+                    <NavLogo 
+                        alt='hexAscent'
+                        src={isDarkTheme
+                            ? require(`./logos/white_sm.png`).default
+                            : require(`./logos/black_sm.png`).default} />
+                    {/**<p>{siteDescription}</p> <h1>{siteTitle}</h1>*/}
                 </HexLink>
 
                 <Toggle

@@ -7,18 +7,18 @@ import { Header } from '../../components'
 
 
 export const Layout = props => {
-    const { title, description }                     = useSiteMetadata()
-    const stylesContext                              = useContext(StylesContext)
-    const { MainContainer, OuterContainer, Footer, } = stylesContext
+    const { title, description }                                              = useSiteMetadata()
+    const stylesContext                                                       = useContext(StylesContext)
+    const { MainContainer, OuterContainer, Footer, Stamp, isDarkTheme, }      = stylesContext
 
     const location                                   = useLocation()
-    
     const [isArticle, setIsArticle]                  = useState(false)
-
+console.log(isDarkTheme)
     useEffect(() => {
         if (location.pathname.includes('blog')) { setIsArticle(true) }
     
     }, [isArticle])
+
 
     return (
         <Fragment>
@@ -32,6 +32,15 @@ export const Layout = props => {
                 <MainContainer isArticle={isArticle}>    
                     {props.children}
                 </MainContainer>
+
+                {/* <Stamp 
+                        alt='hexAscent'
+                        src={isDarkTheme
+                            ? require(`./stamps/dark-gray_md.png`).default
+                            : require(`./stamps/light-gray_md.png`).default} /> 
+                <Stamp
+                    alt='hexAscent'
+                    src={require(`./stamps/dark-gray_md.png`).default} />*/}
 
                 <Footer>
                     <p>&copy; Michael P McAuliffe {new Date().getFullYear()}</p>

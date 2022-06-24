@@ -42,19 +42,22 @@ const MainContainer = styled.main`
     }
 
     @media (min-width: 769px) {
-        width: 75%;
+        width: ${p => p.isArticle ? '75%' : '90%'};
+        /* width: 75%; */
         margin: 15rem auto 0 auto;
     }
     @media (min-width: 1025px) {
-        width: 60%;
+        width: ${p => p.isArticle ? '60%' : '70%'};
+        /* width: 60%; */
         /* margin: 25rem auto 0 auto; */
         margin: ${p => p.isArticle ? '25rem auto 0 auto' : '15rem auto 0 auto'};
     }
     @media (min-width: 1281px) {
-        width: 55%;
+        width: ${p => p.isArticle ? '55%' : '64%'};
+        /* width: 55%; */
     }
     @media (min-width: 1601px) {
-        width: 55%;
+        /* width: 55%; */
         margin: 25rem auto 0 auto;
     }
 `
@@ -248,6 +251,10 @@ const Parallax = styled.img`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+`
+const Stamp = styled.img`
+    height: 20rem;
+    width: 70rem;
 `
 
 // PROVIDER COMPONENT

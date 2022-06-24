@@ -84,6 +84,11 @@ export const Toggle = styled.img`
     }
 `
 
+export const NavLogo = styled.img`
+    height: 6rem;
+    width: 22rem;
+`
+
 export const NavTitle = styled.h1`
     text-align: center;
     line-height: 100%;
