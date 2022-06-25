@@ -1,3 +1,4 @@
+export * from './buffer/Buffer'
 export * from './code/Code'
 export * from './frontmatter/Frontmatter'
 export * from './header/Header'

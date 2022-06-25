@@ -130,7 +130,7 @@ const Footer = styled.section`
     a { text-decoration: none; }
 `
 const SmallContainer = styled.section`
-    margin: 15rem auto;
+    margin: 15rem auto 7rem auto;
     width: 100%;
 
     display: flex;
@@ -138,8 +138,8 @@ const SmallContainer = styled.section`
     justify-content: ${p => p.justify};
     align-items: ${p => p.align};
 
-    @media (min-width: 769px) { margin: 21rem auto; }
-    @media (min-width: 1280px) { margin: 25rem auto; }
+    /* @media (min-width: 769px) { margin: 21rem auto; }
+    @media (min-width: 1280px) { margin: 25rem auto; } */
 `
 
 // TEXT
@@ -253,8 +253,14 @@ const Parallax = styled.img`
     background-size: cover;
 `
 const Stamp = styled.img`
+    display: block;
     height: 20rem;
     width: 70rem;
+    margin 0 auto;
+
+    @media (max-width: 768px) { height: 15rem; width: 53rem; }
+    @media (max-width: 560px) { height: 10rem; width: 35rem; }
+    @media (max-width: 480px) { height: 7rem; width: 27rem; }
 `
 
 // PROVIDER COMPONENT
@@ -284,6 +290,7 @@ const StylesProvider = props => {
                 Thumbnail,
                 ProfilePic,
                 Parallax,
+                Stamp,
 
                 isDarkTheme,
                 handleThemeChange,

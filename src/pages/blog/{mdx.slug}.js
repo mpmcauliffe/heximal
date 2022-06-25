@@ -5,12 +5,12 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 import StylesContext from '../../context/stylesContext'
-import { Layout, Frontmatter, HexLink, Post, Seo, SpreadContainer, } from '../../components'
+import { Buffer, Layout, Frontmatter, HexLink, Post, Seo, SpreadContainer, } from '../../components'
 
 
 const BlogPost = ({ data, pageContext }) => {
-    const stylesContext                                      = useContext(StylesContext)
-    const { IndexWrapper, RegularButton, SmallContainer, }   = stylesContext 
+    const stylesContext                                                          = useContext(StylesContext)
+    const { IndexWrapper, RegularButton, SmallContainer, Stamp, isDarkTheme, }   = stylesContext 
 
     const { fields, frontmatter, }     = data.mdx 
     const image                        = getImage(data.mdx.frontmatter.hero_image)
@@ -60,8 +60,13 @@ console.log(fields.readingTime.text);
                 </ScrollLink>
             </SmallContainer>
             
+            <Stamp 
+                alt='hexAscent'
+                src={isDarkTheme
+                    ? require(`../stamps/dark-gray_md.png`).default
+                    : require(`../stamps/light-gray_md.png`).default} /> 
             
-
+            <Buffer thickness={8} />
             <IndexWrapper>
                 <h2>More Blogs</h2>
                 {data.allMdx.nodes.map(node => (

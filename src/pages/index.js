@@ -1,7 +1,9 @@
 import * as React from 'react'
+import { useContext, } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Layout, Post, Seo, } from '../components'
+import StylesContext from '../context/stylesContext'
+import { Buffer, Layout, Post, Seo, } from '../components'
 
 
 const IndexWrapper = styled.main`
@@ -13,7 +15,8 @@ const IndexWrapper = styled.main`
 `
 
 const BlogPage = ({ data }) => {
-
+    const stylesContext             = useContext(StylesContext)
+    const { Stamp, isDarkTheme, }   = stylesContext
     // console.log(data.allMdx.nodes)
     
     return (
@@ -26,6 +29,13 @@ const BlogPage = ({ data }) => {
                         linkTo={node.slug}
                         frontmatter={node.frontmatter}
                         readTime={node.fields.readingTime.text} />))}
+
+                <Buffer thickness={9} />
+                <Stamp 
+                    alt='hexAscent'
+                    src={isDarkTheme
+                        ? require(`./stamps/dark-gray_md.png`).default
+                        : require(`./stamps/light-gray_md.png`).default} /> 
             </IndexWrapper>
         </Layout>    
     )
