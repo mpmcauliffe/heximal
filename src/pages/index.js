@@ -21,7 +21,7 @@ const BlogPage = ({ data }) => {
     
     return (
         <Layout>
-            <Seo title={`hexBox`} />
+            <Seo title={`hexAscent`} />
             <IndexWrapper>    
                 {data.allMdx.nodes.map(node => (
                     <Post 
