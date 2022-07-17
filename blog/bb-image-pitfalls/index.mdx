@@ -1,5 +1,5 @@
 ---
-title: "Image Pitfalls"
+title: "Avoid Pitfalls when Using Images in React"
 date: "2022-06-01"
 caption: "Figuring out why stupid images won't load. FUCK YOU!."
 
@@ -9,3 +9,67 @@ hero_image: "./image1.png"
 hero_image_alt: "pitfall-player-dead"
 hero_image_credit: "Michael McAuliffe"
 ---
+
+import { BrokenLine, GridStructure, } from '../../src/aux-components'
+
+<BrokenLine thickness={8} />
+
+
+When React code is transpiled into browser-readable javascript, JSX goes
+through a few transformations before it is seen in the browser. Build
+directories are restructured and files are indexed differently in production.
+This transformation exposes the possibility of hazards when dealing with
+different types of modules.
+
+Developers use toolchains such as Create React App (CRA), and Next.js use
+Webpack as a bundler to assist with module integration. There are minor
+differences between versions of Webpack and CRA that affect src attribute in an
+image tag. Aside from those minor tweeks, there are 3 main ways to utilize an
+image in React.
+
+* Import our image as a module
+* Require our image inline 
+* Accessing images in the public directory, the 'escape hatch'
+
+<BrokenLine thickness={5} /> 
+
+## Import our Image as a Module
+
+Once our image is imported, the imported variable can be set as the value of the src attribute
+in an image tag.
+
+```jsx
+import beautifulMountians from './images/beautifulMountians.jpg';
+
+const FavoriteImages = () => (
+    <>
+        <h1>My Favorite Mountian!</h1>
+        
+        <img 
+            alt='beautiful-mount'
+            src={beautifulMountians} />
+    </>
+);
+
+export default FavoriteImages;
+```
+<p align='center'>My Favorite Mountian!</p>
+<GridStructure 
+    modifier={8}
+    itemCount={1}
+    extension={'jpg'} />
+
+### Considerations for Importing our Image
+
+This is an easy way to display our image, but if we needed to share multiple images, 
+this method wouldn't be as practical. 
+
+<BrokenLine thickness={5} /> 
+
+## Require our Image Inline
+
+<BrokenLine thickness={5} /> 
+
+## Using the Public Directory — The Escape Hatch
+
+<BrokenLine thickness={5} /> 
