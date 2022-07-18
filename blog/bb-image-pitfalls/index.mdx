@@ -27,15 +27,15 @@ differences between versions of Webpack and CRA that affect src attribute in an
 image tag. Aside from those minor tweeks, there are 3 main ways to utilize an
 image in React.
 
-* Import our image as a module
-* Require our image inline 
+* Import an image as a module
+* Require an image inline 
 * Accessing images in the public directory, the 'escape hatch'
 
 <BrokenLine thickness={5} /> 
 
-## Import our Image as a Module
+## Import an Image as a Module
 
-Once our image is imported, the imported variable can be set as the value of the src attribute
+Once the image is imported, the imported variable can be set as the value of the src attribute
 in an image tag.
 
 ```jsx
@@ -43,7 +43,7 @@ import beautifulMountians from './images/beautifulMountians.jpg';
 
 const FavoriteImages = () => (
     <>
-        <h1>My Favorite Mountian!</h1>
+        <p>My Favorite Mountian!</p>
         
         <img 
             alt='beautiful-mount'
@@ -53,23 +53,150 @@ const FavoriteImages = () => (
 
 export default FavoriteImages;
 ```
+
+<BrokenLine thickness={2} />
+
 <p align='center'>My Favorite Mountian!</p>
 <GridStructure 
     modifier={8}
     itemCount={1}
     extension={'jpg'} />
 
-### Considerations for Importing our Image
+<BrokenLine thickness={2} />
 
-This is an easy way to display our image, but if we needed to share multiple images, 
-this method wouldn't be as practical. 
+### Considerations for Importing an Image
+
+This is an easy way to display an image, but this wouldn't be practical for
+importing many images. This method also has limitations for displaying images 
+dynamically. There are many other solutions to such problems coming up. 
 
 <BrokenLine thickness={5} /> 
 
-## Require our Image Inline
+## Require an image inline
+
+```jsx
+
+const FavoriteImages = () => (
+    <>
+        <p>My Favorite Mountian!</p>
+        
+        <img 
+            alt='beautiful-mount'
+            src={require('./images/beautifulMountians.jpg')} />
+    </>
+);
+
+export default FavoriteImages;
+```
+
+<BrokenLine thickness={2} />
+
+There may be issues using *require* in this way. Specific to older versions of react scripts, you may need
+to reference the .default key. You can read more about this issue [here](https://github.com/facebook/create-react-app/issues/9992).
+
+```jsx
+<img 
+    alt='beautiful-mount'
+    src={require('./images/beautifulMountians.jpg').default} />
+```
+
+<BrokenLine thickness={2} />
+
+### You Actually CAN Import Multiple Images
+
+Javascript modules are robust so there are many ways they can be used to overcome
+challenges. The power of *import* can be combined with the power of *require*. 
+Take this file tree, for instance:
+
+```CSS
+├── src/
+    ├── images/
+    │   ├── bear1.jpg
+    │   ├── bear2.jpg
+    │   └── index.js
+    ├── App.js
+    └── …
+```
+
+Images can be exported as an object in images/index.js
+
+```javascript
+    // index.js
+    const images = {
+        bear1: require('../images/bear1.jpg'),
+        bear2: require('../images/bear2.jpg'),
+    }
+
+    export default images
+```
+
+<BrokenLine thickness={2} />
+
+The *images* object may now be imported in App.js. 
+
+```jsx
+import images from './images';
+
+const FavoriteImages = () => (
+    <>
+        <p>BEARS!</p>
+        
+        <img 
+            alt='bear1'
+            src={images.bear1} />
+        <img 
+            alt='bear2'
+            src={images.bear2} />
+    </>
+);
+
+export default FavoriteImages;
+```
+
+<p align='center'>Bears!</p>
+<GridStructure 
+    modifier={2}
+    itemCount={2}
+    extension={'jpg'} />
 
 <BrokenLine thickness={5} /> 
 
 ## Using the Public Directory — The Escape Hatch
+
+This option works with CRA and Next.js. CRA refers to this as an escape hatch and 
+emphasizes that it should be used rarely. The file tree may be different in your app,
+but the premise is the same.
+
+```CSS
+├── public/
+    ├── images/
+        └── spookyTown.jpg
+├── scr/
+    ├── App.js
+    └── …
+```
+
+The *public* directory can be accessed using the **process.env.PUBLIC_URL** environment
+variable.
+
+```jsx
+const FavoriteImages = () => (
+    <>
+        <p>Spooky Town</p>
+        
+        <img 
+            alt='spooky-town'
+            src={process.env.PUBLIC_URL + '/images/spookyTown.jpg'} />
+    </>
+);
+
+export defualt FavoriteImages;
+```
+
+<p align='center'>Spooky Town</p>
+<GridStructure 
+    modifier={17}
+    itemCount={1}
+    extension={'jpg'} />
 
 <BrokenLine thickness={5} /> 
