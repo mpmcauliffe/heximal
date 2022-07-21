@@ -41,6 +41,8 @@ const MainContainer = styled.main`
         transition: 1s;
     }
 
+    a { color: ${p => p.theme.accent} }
+
     @media (min-width: 769px) {
         width: ${p => p.isArticle ? '75%' : '90%'};
         /* width: 75%; */

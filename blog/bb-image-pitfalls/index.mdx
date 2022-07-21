@@ -1,6 +1,6 @@
 ---
 title: "Avoid Pitfalls when Using Images in React"
-date: "2022-06-01"
+date: "2022-06-21"
 caption: "Which module loading solution works best for your situation?"
 
 published: true
@@ -20,11 +20,11 @@ through a few transformations before it is seen in the browser. Build
 directories are restructured and files are indexed differently in production.
 This transformation exposes the possibility of hazards when dealing with
 different types of modules.
-
+ 
 Developers use toolchains such as Create React App (CRA), and Next.js use
 Webpack as a bundler to assist with module integration. There are minor
-differences between versions of Webpack and CRA that affect src attribute in an
-image tag. Aside from those minor tweeks, there are 3 main ways to utilize an
+differences between versions of Webpack and CRA that affect the src attribute in an
+image tag. Aside from those minor tweaks, there are 3 main ways to utilize an
 image in React.
 
 * Import an image as a module
@@ -68,7 +68,7 @@ export default FavoriteImages;
 
 This is an easy way to display an image, but this wouldn't be practical for
 importing many images. This method also has limitations for displaying images 
-dynamically. There are many other solutions to such problems coming up. 
+dynamically. There are other solutions to these problems coming up. 
 
 <BrokenLine thickness={5} /> 
 
