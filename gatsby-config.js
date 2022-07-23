@@ -3,7 +3,8 @@ module.exports = {
         title: `hexAscent`,
         description: `A coding and user experience journey.`,
         author: `Michael P McAuliffe`,
-        image: `src/images/hex-strong_sm.png`,
+        image: `/hex-strong_sm.png`,
+        url: `https://hexascent.com/`,
         // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     },
     flags: {
