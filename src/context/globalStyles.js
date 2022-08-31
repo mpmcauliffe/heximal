@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
         height: 100%;
         width: 100%;
         font-size: 62.5%;
+        scroll-behavior: smooth;
     }
     body {
         margin: 0;
